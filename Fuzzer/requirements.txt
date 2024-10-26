@@ -1,0 +1,8 @@
+websocket-client
+argparse
+
+#Fuzzer project
+git+https://github.com/mseclab/PyJFuzz
+
+# JSON Scheme validator
+git+https://github.com/Julian/jsonschema

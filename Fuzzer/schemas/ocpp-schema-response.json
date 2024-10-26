@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "anyOf": [
+        {
+            "maxItems": 5,
+            "minItems": 5,
+            "items": [
+                {
+                    "type": "number",
+					"minimum": 3,
+                    "maximum": 4
+                },
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "string",
+                    "enum": [
+                        "UniqueId",
+                        "ErrorCode",
+                        "NotImplemented",
+                        "NotSupported",
+                        "InternalError",
+                        "ProtocolError",
+                        "SecurityError",
+                        "FormationViolation",
+                        "PropertyConstraintViolation",
+                        "OccurenceConstraintViolation",
+                        "TypeConstraint",
+                        "OccuranceConstraintViolation",
+                        "TypeConstraintViolation",
+                        "GenericError"
+                    ]
+                },
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object"
+                }
+            ]
+        },<loop>
+        {
+            "maxItems": 3,
+            "minItems": 3,
+            "items": [
+                {
+                    "type": "number",
+                    "minimum": 3,
+                    "maximum": 4
+                },
+                {
+                    "type": "string"
+                },
+                {
+                    "$ref": "file:schemas/json/<action-schema>"
+                }
+            ]
+        }<loop>
+    ]
+}

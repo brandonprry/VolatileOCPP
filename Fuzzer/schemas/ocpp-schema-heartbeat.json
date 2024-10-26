@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "maxItems": 4,
+    "minItems": 4,
+    "oneOf": [
+        {
+            "items": [
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "string",
+                    "enum": ["Heartbeat"]
+                },
+                {
+                    "$ref": "file:schemas/json/Heartbeat.json"
+                }
+            ]
+        }
+    ]
+}
