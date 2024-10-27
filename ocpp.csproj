@@ -13,4 +13,8 @@
     <PackageReference Include="WebSocketSharp-netstandard" Version="1.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Scenarios/" />
+  </ItemGroup>
+
 </Project>
