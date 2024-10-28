@@ -1,5 +1,6 @@
 using System;
 using WebSocketSharp;
+using Newtonsoft.Json.Linq;
 
 namespace ocpp.Scenarios;
 
@@ -14,30 +15,33 @@ public class TC_003_CSMS : IScenario
              int i = 1;
              ws.OnMessage += (sender, e) =>
             {
+                
+                JArray a = JArray.Parse(e.Data);
+                JObject j = a[2] as JObject;
                 if (i == 1)
                 {
-                    if (!Utility.ValidateJSON(e.Data, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
+                    if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                         throw new Exception("Invalid response");
 
                     i++;
                 }
                 else if (i ==2)
                 {       
-                    if (!Utility.ValidateJSON(e.Data, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/AuthorizeResponse.json")))
+                    if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/AuthorizeResponse.json")))
                         throw new Exception("Invalid repsonse");
 
                     i++;
                 }
                 else if (i ==3)
                 {       
-                    if (!Utility.ValidateJSON(e.Data, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
+                    if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
                         throw new Exception("Invalid repsonse");
 
                     i++;
                 }
                 else if (i == 4)
                 {                   
-                    if (!Utility.ValidateJSON(e.Data, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
+                    if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                         throw new Exception("Invalid response");
                 }
             };

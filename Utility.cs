@@ -7,11 +7,9 @@ namespace ocpp;
 
 public static class Utility
 {
-    public static bool ValidateJSON(string json, string schema)
+    public static bool ValidateJSON(JObject json, string schema)
     {
         JSchema s = JSchema.Parse(schema);
-        JArray a = JArray.Parse(json);
-        JObject j = a[2] as JObject;
-        return j.IsValid(s);
+        return json.IsValid(s);
     }
 }
