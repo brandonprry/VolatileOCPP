@@ -3,6 +3,7 @@ using System;
 using WebSocketSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ocpp.Scenarios;
 
 public class Program
 {
@@ -10,6 +11,13 @@ public class Program
     {
         string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
         string protocol = "ocpp1.6";
+
+        IScenario test = new TC_001_CSMS();
+        test.RunScenario(url, protocol);
+
+        test = new TC_003_CSMS();
+        test.RunScenario(url, protocol);
+
 
         using (var ws = new WebSocket(url, protocol))
         {
@@ -157,6 +165,9 @@ public class Program
                 Thread.Sleep(1000);
             }
         }
+
+ 
+
 
         Console.WriteLine("Done.");
     }

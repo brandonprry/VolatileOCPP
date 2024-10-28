@@ -18,3 +18,4 @@
 /Users/bperry/projects/ocpp/bin/Debug/net8.0/Json.Net.dll
 /Users/bperry/projects/ocpp/obj/Debug/net8.0/ocpp.sourcelink.json
 /Users/bperry/projects/ocpp/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/bperry/projects/ocpp/bin/Debug/net8.0/Newtonsoft.Json.Schema.dll
