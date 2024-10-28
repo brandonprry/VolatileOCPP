@@ -1,6 +1,7 @@
 using System;
 using WebSocketSharp;
 using Newtonsoft.Json.Linq;
+using ocpp.Scenarios;
 
 namespace ocpp;
 
@@ -48,6 +49,8 @@ public abstract class System
 
     string _url = string.Empty;
     string _protocol = string.Empty;
+
+    public List<IScenario> Scenarios { get; protected set; }
     public string[]? SupportedMethods { get; set; }
 
     public string[]? UnsupportedMethods { get; set; }
