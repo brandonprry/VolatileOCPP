@@ -20,19 +20,21 @@ public class TC_001_CSMS : IScenario
                JObject j = a[2] as JObject;
                if (i == 1)
                {
+                     i++;
                    if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/BootNotificationResponse.json")))
                        throw new Exception("Invalid response");
 
                    if (j["status"] == null || j["status"].Value<string>() != "Accepted")
                        throw new Exception("Invalid response");
-                   i++;
+              
                }
                else if (i == 2)
                {
+                 i++;
                    if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                        throw new Exception("Invalid response");
 
-                   i++;
+                  
                }
                else if (i == 3)
                {
