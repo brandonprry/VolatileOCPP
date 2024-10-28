@@ -24,7 +24,7 @@ public class CentralSystem : System
     {
         foreach (IScenario s in _scenarios)
         {
-            s.RunScenario(this.URL, this.Protocol);
+            s.RunScenario(URL, Protocol);
         }
     }
 

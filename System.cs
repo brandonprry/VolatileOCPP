@@ -34,6 +34,7 @@ public abstract class System
                 try
                 {
                     ws.Send("[2, \"" + uuid.ToString() + "\", \"Heartbeat\", {}]");
+                    Thread.Sleep(1000);
                 }
                 catch
                 {
