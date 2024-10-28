@@ -28,6 +28,22 @@ public class Program
             Console.WriteLine("TC_003_CSMS Failed");
         }
 
+        test = new TC_004_1_CSMS();
+
+        try {
+            test.RunScenario(url, protocol);
+        } catch {
+            Console.WriteLine("TC_004_1_CSMS Failed");
+        }
+
+/*        test = new TC_004_2_CSMS();
+
+        try {
+            test.RunScenario(url, protocol);
+        } catch {
+            Console.WriteLine("TC_004_2_CSMS Failed");
+        }*/
+
          test = new TC_064_CSMS();
 
         try {
