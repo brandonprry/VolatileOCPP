@@ -7,8 +7,10 @@ namespace ocpp;
 
 public static class Utility
 {
-    public static string[] Methods {
-        get {
+    public static string[] Methods
+    {
+        get
+        {
             return [
        "Authorize",
 "BootNotification",
@@ -81,7 +83,7 @@ public static class Utility
        ];
         }
     }
-    
+
     public static bool ValidateJSON(JObject json, string schema)
     {
         JSchema s = JSchema.Parse(schema);

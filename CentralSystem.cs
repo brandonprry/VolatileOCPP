@@ -37,6 +37,10 @@ public class CentralSystem : System
                 Console.WriteLine("Skipping incompatible test " + s.GetType().ToString());
                 continue;
             }
+            else
+            {
+                Console.WriteLine("Running scenario: " + s.GetType().ToString());
+            }
     
             s.RunScenario(URL, Protocol);
         }
