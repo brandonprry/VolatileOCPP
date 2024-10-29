@@ -28,9 +28,15 @@ public class CentralSystem : System
         
         foreach (IScenario s in Scenarios)
         {
+            bool bad = false;
             foreach(string method in s.Dependencies)
                 if (!SupportedMethods.Contains(method))
-                    continue;
+                    bad = true;
+            
+            if (bad){
+                Console.WriteLine("Skipping incompatible test " + s.GetType().ToString());
+                continue;
+            }
     
             s.RunScenario(URL, Protocol);
         }
