@@ -24,30 +24,33 @@ public class CentralSystem : System
             new TC_064_CSMS(),
         ];
     }
-   
+
     public void RunScenarios()
     {
         if (UnsupportedMethods == null)
             GetMethods();
-        
+
         foreach (IScenario s in Scenarios)
         {
             bool bad = false;
-            foreach(string method in s.Dependencies)
+            foreach (string method in s.Dependencies)
                 if (!SupportedMethods.Contains(method))
                     bad = true;
-            
-            if (bad){
+
+            if (bad)
+            {
                 Console.WriteLine("Skipping incompatible test " + s.GetType().ToString());
                 continue;
             }
-                
+
             Console.Write("Running scenario: " + s.GetType().ToString());
-            
-             if (s.RunScenario(URL, Protocol)){
-               Console.WriteLine("\t-- PASSED!");
+
+            if (s.RunScenario(URL, Protocol))
+            {
+                Console.WriteLine("\t-- PASSED!");
             }
-            else {
+            else
+            {
                 Console.WriteLine("\t-- FAILED!");
             }
         }
