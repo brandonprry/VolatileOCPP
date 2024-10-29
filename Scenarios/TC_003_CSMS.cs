@@ -6,6 +6,12 @@ namespace ocpp.Scenarios;
 
 public class TC_003_CSMS : IScenario
 {
+        public string[] Dependencies { get { return ["StartTransaction", "StatusNotification", "Authorize"];}}
+
+    public bool DependsOn(string method)
+    {
+        return Dependencies.Contains(method);
+    }
     public bool RunScenario(string url, string protocol)
     {
         using var ws = new WebSocket(url, protocol);

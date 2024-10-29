@@ -6,6 +6,12 @@ namespace ocpp.Scenarios;
 
 public class TC_064_CSMS : IScenario
 {
+    public string[] Dependencies { get { return ["DataTransfer"];}}
+
+    public bool DependsOn(string method)
+    {
+        return Dependencies.Contains(method);
+    }
     public bool RunScenario(string url, string protocol)
     {
 
