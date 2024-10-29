@@ -11,7 +11,6 @@ public class Program
 
         CentralSystem s = new CentralSystem(url, protocol);
 
-        s.GetMethods();
         s.RunScenarios();
 
         Console.WriteLine("Done.");
