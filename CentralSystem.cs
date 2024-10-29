@@ -17,6 +17,7 @@ public class CentralSystem : System
             new TC_005_1_CSMS(),
             new TC_007_CSMS(),
             new TC_010_CSMS(),
+            new TC_023_1_CSMS(),
             new TC_064_CSMS(),
         ];
     }

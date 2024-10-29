@@ -20,7 +20,7 @@ messages = [
     [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2cab", "RemoteStopTransaction", {"transactionId": 123456}],
     [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2cac", "ReserveNow", {"connectorId": 1, "expiryDate": "2017-10-27T19:10:11Z", "idTag": "volatileocpp", "reservationId": 89}],
     [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2cad", "Reset", {"type": "Hard"}],
-    [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2cae", "SendLocalList", {"listVersion": 2, "localAuthorizationList": [{"idTag": "tagtag", "idTagInfo": {"status":"Accepted"}}], "updateType": "Full"}],
+    [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2cae", "SendLocalList", {"listVersion": 2, "localAuthorizationList": [{"idTag": "volatileocpp", "idTagInfo": {"status":"Accepted"}}], "updateType": "Full"}],
     [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2caf", "SetChargingProfile", {"connectorId":1, "csChargingProfiles": {"chargingProfileId":888,"transactionId":78, "stackLevel":1, "chargingProfilePurpose":"TxProfile", "chargingProfileKind": "Absolute", "recurrencyKind":"Weekly", "validFrom":"2017-10-27T19:10:11Z", "validTo":"2017-10-27T19:10:11Z", "chargingSchedule":{"duration":10, "chargingRateUnit":"W", "chargingSchedulePeriod":[{"startPeriod":100, "limit": 0.1}]}}}],
     [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2cba", "TriggerMessage", {"requestedMessage": "Heartbeat", "connectorId": 1}],
     [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2cbb", "UnlockConnector", {"connectorId":1}],
