@@ -2,7 +2,7 @@
 
 https://ocpp.us
 
-Test cases are currently built against the SteVe OCPP Server implementation. Test case implementations are built based directly on the CompliancyTestTool PDF included within the repository.
+Test cases are currently built against the SteVe OCPP Server implementation. Test case implementations are built based directly on the CompliancyTestTool PDF included within the repository. Not every test case scenario is implemented. Many will be implemented im time. Some will be implemented when software that implements it gets tested.
 
 https://github.com/steve-community/steve
 
