@@ -33,7 +33,6 @@ public class TC_024_CSMS : IScenario
                i++;
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
-
            }
            else if (i == 2)
            {

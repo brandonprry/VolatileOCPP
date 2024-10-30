@@ -97,8 +97,8 @@ def test():
             wf.write("----------------- New message -----------------\n")
             testf.write("----------------- New message -----------------\n")
             communicate(json.dumps(m))
-            if validate(m, req_schema) == None:
-                print "Base message OK"
+            #if validate(m, req_schema) == None:
+            #    print "Base message OK"
             for utf in [True, False]: # UTF8 insertion mode
                 wf.write("- utf = " + str(utf) + " -\n")
                 for s in [True, False]:
