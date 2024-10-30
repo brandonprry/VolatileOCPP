@@ -10,7 +10,7 @@ Issues found and reported so far:
 
 https://github.com/steve-community/steve/issues/1609
 
-Unless your CS or CSMS implements every OCPP method, then not every scenario will apply to your implmentation. Those scenarios will be skipped during execution. Most implementations will be a subset of the full OCPP specification.
+Unless your CS or CSMS implements every OCPP method, then not every scenario will apply to your implementation. Those scenarios will be skipped during execution. Most implementations will be a subset of the full OCPP specification.
 
 If you need help verifying your OCPP implementation, email bperry@atx.services to see how we can help.
 
