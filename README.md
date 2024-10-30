@@ -23,6 +23,7 @@ Supports method: StatusNotification
 Supports method: StartTransaction
 Supports method: StopTransaction
 Done
+
 Running scenario: ocpp.Scenarios.TC_001_CSMS    -- PASSED!
 Running scenario: ocpp.Scenarios.TC_003_CSMS    -- PASSED!
 Running scenario: ocpp.Scenarios.TC_004_1_CSMS  -- PASSED!
