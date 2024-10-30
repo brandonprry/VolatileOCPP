@@ -2,7 +2,7 @@
 
 https://ocpp.us
 
-Scenarios can be run against the SteVe OCPP Server implementation as a testbed. Scenario implementations are built based directly on the CompliancyTestTool PDF included within the repository. Not every scenario is implemented. Many will be implemented in time. Some will be implemented when software/hardware that implements it gets tested.
+Scenarios can be run against the SteVe OCPP Server implementation as a testbed. Scenario implementations are built based directly on the CompliancyTestTool PDF included within the repository. Not every scenario is implemented. Many will be implemented in time. Some will be implemented when software/hardware that implements it gets tested. Unless your CS or CSMS implements every OCPP method, then not every scenario will apply to your implmentation and will be skipped during execution.
 
 https://github.com/steve-community/steve
 
