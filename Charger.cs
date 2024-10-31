@@ -5,7 +5,7 @@ namespace ocpp;
 
 public class Charger : System
 {
-    public Charger(string url, string protocol, bool check = false) : base()
+    public Charger(string url, string protocol) : base()
     {
         WebSocket ws = new WebSocket(url, protocol);
         ws.Connect();
@@ -13,7 +13,7 @@ public class Charger : System
         Socket = ws;
     }
 
-    public Charger(WebSocket ws, bool check = false) : base(ws, check)
+    public Charger(WebSocket ws) : base(ws)
     {
         this.Socket = ws;
     }
