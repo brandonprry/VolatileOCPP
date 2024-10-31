@@ -1410,7 +1410,7 @@ messages = [
     [2,"8d59bc8c-9884-4d64-82b5-3819d0c58b8a","Authorize",{"idTag":"volatileocpp"}],
     [2,"dddb2599-d678-4ff8-bf38-a230390a1200","StartTransaction",{"connectorId":"1","idTag":"volatileocpp","meterStart":"42","timestamp":"2017-10-27T19:10:11Z"}],
    [2,"9b25cbb0-c016-41e7-baa0-e796a9565c11","StatusNotification",{"connectorId":"1","errorCode":"NoError","status":"Available"}],
-    [2,"29e7a835-6ff6-4cf8-90e6-5d51182f8fdb","StopTransaction",{"idTag":"volatileocpp", "meterStop":"41","timestamp":"2017-10-27T19:10:11Z","transactionId":"1"}],
+    [2,"29e7a835-6ff6-4cf8-90e6-5d51182f8fdb","StopTransaction",{"idTag":"volatileocpp", "reason":"PowerLoss" "meterStop":"41","timestamp":"2017-10-27T19:10:11Z","transactionId":"1"}],
     [2, "29e7a835-6ff6-4cf8-90e6-5d51182f8fde", "DataTransfer", {"vendorId": "Radboud", "messageId": "No-Idea", "data": "There should be some data here"}],
     [2, "29e7a835-6ff6-4cf8-90e6-5d51182f8fdf", "DiagnosticsStatusNotification", {"status": "Uploading"}],
     [2, "29e7a835-6ff6-4cf8-90e6-5d51182f8bea", "FirmwareStatusNotification", {"status": "DownloadFailed"}],
