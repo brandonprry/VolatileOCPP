@@ -18,6 +18,7 @@ public class TC_003_CSMS : IScenario
 
         ws.Connect();
 
+        Charger charger = new Charger(ws);
         int i = 1;
         bool passed = false;
         ws.OnMessage += (sender, e) =>
@@ -65,16 +66,16 @@ public class TC_003_CSMS : IScenario
            }
        };
 
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Preparing\"}]");
+        charger.SendStatusNotification("1", "NoError", "Preparing");
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"volatileocpp\"}]");
+        charger.SendAuthorize();
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"dddb2599-d678-4ff8-bf38-a230390a1200\",\"StartTransaction\",{\"connectorId\":1,\"idTag\":\"volatileocpp\",\"meterStart\":42,\"timestamp\":\"2017-10-27T19:10:11Z\"}]");
+        charger.SendStartTransaction();
         Thread.Sleep(1000);
         
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Charging\"}]");
+        charger.SendStatusNotification("1", "NoError", "Charging");
         Thread.Sleep(1000);
 
         return passed;

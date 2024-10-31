@@ -7,43 +7,84 @@ namespace ocpp;
 
 public abstract class System
 {
+    public System()
+    {
+    }
+
+    public System(WebSocket ws, bool check = false)
+    {
+        _url = ws.Url.ToString();
+
+        ws.WaitTime = new TimeSpan(0, 0, 60);
+
+            ws.OnError += (sender, e) =>
+            {
+                Console.WriteLine("Error");
+                return;
+            };
+
+        Socket = ws;
+        if (check)
+        {
+            Guid uuid = Guid.NewGuid();
+
+            try
+            {
+                ws.Send("[2, \"" + uuid.ToString() + "\", \"Heartbeat\", {}]");
+                Thread.Sleep(1000);
+            }
+            catch
+            {
+                Console.WriteLine("Error");
+                return;
+            }
+
+        }
+    }
+
+
     public System(string url, string protocol, bool check = false)
     {
+        if (!url.StartsWith("wss://"))
+            Console.WriteLine("WARNING: Insecure plaintext communication");
+
         _url = url;
         _protocol = protocol;
 
+        WebSocket ws = new WebSocket(url, protocol);
+        ws.WaitTime = new TimeSpan(0, 0, 60);
+
+        ws.OnError += (sender, e) =>
+        {
+            Console.WriteLine("Error");
+            return;
+        };
+
+        //ws.OnMessage += (sender, e) =>
+        //{
+        //    Console.WriteLine("Laputa says: " + e.Data);
+        //};
+
+        ws.Connect();
+       //ws.
+
+        Socket = ws;
+
         if (check)
         {
-            using (var ws = new WebSocket(url, protocol))
+            Guid uuid = Guid.NewGuid();
+            try
             {
-                ws.WaitTime = new TimeSpan(0, 0, 60);
-
-                ws.OnError += (sender, e) =>
-                {
-                    Console.WriteLine("Error");
-                    return;
-                };
-
-                ws.OnMessage += (sender, e) =>
-                {
-                    Console.WriteLine("Laputa says: " + e.Data);
-                };
-
-                ws.Connect();
-                Guid uuid = Guid.NewGuid();
-
-                try
-                {
-                    ws.Send("[2, \"" + uuid.ToString() + "\", \"Heartbeat\", {}]");
-                    Thread.Sleep(1000);
-                }
-                catch
-                {
-                    Console.WriteLine("Error");
-                    return;
-                }
-
+                ws.Send("[2, \"" + uuid.ToString() + "\", \"Heartbeat\", {}]");
+                Thread.Sleep(1000);
             }
+            catch
+            {
+                Console.WriteLine("Error");
+                return;
+            }
+
+
         }
     }
 
@@ -58,6 +99,8 @@ public abstract class System
     public string URL { get { return _url; } }
 
     public string Protocol { get { return _protocol; } }
+
+    public WebSocket Socket { get; protected set; }
 
     public void GetMethods()
     {
@@ -80,54 +123,55 @@ public abstract class System
         List<string> more = new List<string>();
         foreach (string method in rpcMethods)
         {
-            using (var ws = new WebSocket(_url, _protocol))
+
+            Socket = new WebSocket(_url, _protocol);
+            Socket.Connect();
+
+            Socket.OnMessage += (sender, e) =>
             {
-                ws.OnMessage += (sender, e) =>
+                JToken[] ret = JArray.Parse(e.Data).ToArray<JToken>();
+
+                string? tmp = string.Empty;
+                JObject? obj;
+
+                if (ret[2].Type == JTokenType.String)
                 {
-                    JToken[] ret = JArray.Parse(e.Data).ToArray<JToken>();
-                    
-                    string? tmp = string.Empty;
-                    JObject? obj;
+                    tmp = ret[2].Value<string>();
 
-                    if (ret[2].Type == JTokenType.String)
+                    if (!validResponses.Contains(tmp))
+                        throw new Exception(tmp);
+
+                    if (tmp == "NotImplemented" || tmp == "NotSupported")
                     {
-                        tmp = ret[2].Value<string>();
-
-                        if (!validResponses.Contains(tmp))
-                            throw new Exception(tmp);
-
-                        if (tmp == "NotImplemented" || tmp == "NotSupported")
-                        {
-                            less.Add(method);
-                        }
-                            else
-                            {
-                                if (tmp == "InternalError")
-                                {
-                                    more.Add(method);
-                                    Console.WriteLine("Supports method: " + method);
-                                }
-                            }
+                        less.Add(method);
                     }
                     else
                     {
-                        obj = ret[2] as JObject;
-                        more.Add(method);
-                        Console.WriteLine("Supports method: " + method);
+                        if (tmp == "InternalError")
+                        {
+                            more.Add(method);
+                            Console.WriteLine("Supports method: " + method);
+                        }
                     }
-                    
-                    //Console.WriteLine("Laputa says: " + method);
-                };
+                }
+                else
+                {
+                    obj = ret[2] as JObject;
+                    more.Add(method);
+                    Console.WriteLine("Supports method: " + method);
+                }
 
-                ws.Connect();
-                Guid uuid = Guid.NewGuid();
-                ws.Send("[2, \"" + uuid.ToString() + "\", \"" + method + "\", {}]");
-                Thread.Sleep(1000);
-            }
+                //Console.WriteLine("Laputa says: " + method);
+            };
+
+            Guid uuid = Guid.NewGuid();
+            Socket.Send("[2, \"" + uuid.ToString() + "\", \"" + method + "\", {}]");
+            Thread.Sleep(1000);
+
+
+            this.SupportedMethods = more.ToArray();
+            this.UnsupportedMethods = less.ToArray();
+            //Console.WriteLine("Done");
         }
-
-        this.SupportedMethods = more.ToArray();
-        this.UnsupportedMethods = less.ToArray();
-        Console.WriteLine("Done");
     }
 }

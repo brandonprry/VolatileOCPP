@@ -20,6 +20,7 @@ public class TC_064_CSMS : IScenario
 
         int i = 1;
         bool passed = false;
+        Charger charger = new Charger(ws);
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -45,10 +46,8 @@ public class TC_064_CSMS : IScenario
            passed = true;
        };
 
-        ws.Send(" [2, \"29e7a835-6ff6-4cf8-90e6-5d51182f8fde\", \"DataTransfer\", {\"vendorId\": \"Radboud\", \"messageId\": \"No-Idea\", \"data\": \"There should be some data here\"}]");
+        charger.SendDataTransfer();
         Thread.Sleep(1000);
-
-
 
 
         return passed;
