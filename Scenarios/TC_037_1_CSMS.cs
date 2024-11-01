@@ -19,9 +19,10 @@ public class TC_037_1_CSMS : IScenario
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
 
-        int i = 1;
+        
         bool passed = false;
         Charger charger = new Charger(ws);
+        bool step1 = false, step2 = false;
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -29,9 +30,9 @@ public class TC_037_1_CSMS : IScenario
 
            if (j == null)
                return;
-           if (i == 1)
+
+           if (!step1)
            {
-               i++;
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
                    throw new Exception("Invalid response");
 
@@ -39,12 +40,15 @@ public class TC_037_1_CSMS : IScenario
                    j["idTagInfo"]["status"] == null ||
                    j["idTagInfo"]["status"].Value<string>() != "Accepted")
                    throw new Exception("Invalid response");
+
+                step1 = true;
            }
-           else if (i == 2)
+           else if (!step2)
            {
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
 
+                step2 = true;
                passed = true;
            }
 
@@ -52,9 +56,13 @@ public class TC_037_1_CSMS : IScenario
 
 
         charger.SendStartTransaction();
+
+        while (!step1)
         Thread.Sleep(1000);
 
         charger.SendStatusNotification(status: "Charging");
+
+        while (!step2)
         Thread.Sleep(1000);
 
 

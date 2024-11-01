@@ -19,10 +19,9 @@ public class TC_037_3_CSMS : IScenario
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
 
-        int i = 1;
-        int transid = 0;
         bool passed = false;
         Charger charger = new Charger(ws);
+        bool step1 = false, step2 = false, step3 = false, step4 = false;
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -31,9 +30,8 @@ public class TC_037_3_CSMS : IScenario
            if (j == null)
                return;
 
-           if (i == 1)
+           if (!step1)
            {
-               i++;
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
                    throw new Exception("Invalid response");
 
@@ -42,42 +40,52 @@ public class TC_037_3_CSMS : IScenario
                    j["idTagInfo"]["status"].Value<string>() != "Invalid")
                    throw new Exception("Invalid response");
 
+               step1 = true;
            }
-           else if (i == 2)
+           else if (!step2)
            {
-               i++;
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
-                
+
+               step2 = true;
            }
-           else if (i == 3)
+           else if (!step3)
            {
-               i++;
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StopTransactionResponse.json")))
                    throw new Exception("Invalid response");
-                   }
-           else if (i == 4)
+
+               step3 = true;
+           }
+           else if (!step4)
            {
-               i++;
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
-            
+
+               step4 = true;
                passed = true;
            }
 
        };
 
-        charger.SendStartTransaction(idTag:"NotAValidID");
-        Thread.Sleep(1000);
+        charger.SendStartTransaction(idTag: "NotAValidID");
+
+        while (!step1)
+            Thread.Sleep(1000);
 
         charger.SendStatusNotification(status: "Charging");
-        Thread.Sleep(1000);
 
-        charger.SendStopTransaction(transid: "-1", reason:"DeAuthorized", idTag: "NotAValidID");
-        Thread.Sleep(1000);       
+        while (!step2)
+            Thread.Sleep(1000);
+
+        charger.SendStopTransaction(transid: "-1", reason: "DeAuthorized", idTag: "NotAValidID");
+
+        while (!step3)
+            Thread.Sleep(1000);
 
         charger.SendStatusNotification(status: "Finishing");
-        Thread.Sleep(1000);
+
+        while (!step4)
+            Thread.Sleep(1000);
 
         return passed;
     }

@@ -5,17 +5,12 @@ namespace ocpp;
 
 public class Charger : System
 {
-    public Charger(string url, string protocol) : base()
+    public Charger(string url, string protocol) : base(url, protocol)
     {
-        WebSocket ws = new WebSocket(url, protocol);
-        ws.Connect();
-
-        Socket = ws;
     }
 
     public Charger(WebSocket ws) : base(ws)
     {
-        this.Socket = ws;
     }
 
     internal void SendBootNotification(string chargePointVendor = "volatileocpp Vendor", string chargePointModel = "volatileocpp Model")

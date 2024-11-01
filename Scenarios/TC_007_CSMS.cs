@@ -7,7 +7,7 @@ namespace ocpp.Scenarios;
 
 public class TC_007_CSMS : IScenario
 {
-    public string[] Dependencies { get { return ["StatusNotification", "StartTransaction"];}}
+    public string[] Dependencies { get { return ["StatusNotification", "StartTransaction"]; } }
 
     public bool DependsOn(string method)
     {
@@ -19,8 +19,9 @@ public class TC_007_CSMS : IScenario
         ws.Connect();
 
         Charger charger = new Charger(ws);
-        int i = 1;
+        
         bool passed = false;
+        bool step1 = false, step2 = false, step3 = false;
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -28,18 +29,16 @@ public class TC_007_CSMS : IScenario
 
            if (j == null)
                return;
-        if (i == 1)
+
+           if (!step1)
            {
-               i++;
-               
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
 
+               step1 = true;
            }
-           else if (i == 2)
+           else if (!step2)
            {
-               i++;
-
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
                    throw new Exception("Invalid response");
 
@@ -49,27 +48,33 @@ public class TC_007_CSMS : IScenario
                    throw new Exception("Invalid response");
                }
 
+               step2 = true;
            }
-           else if (i == 3)
+           else if (!step3)
            {
-            
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
 
-                passed = true;
-
+               step3 = true;
+               passed = true;
            }
        };
 
         charger.SendStatusNotification(status: "Preparing");
+
+        while (!step1)
         Thread.Sleep(1000);
 
         charger.SendStartTransaction();
+
+        while (!step2)
         Thread.Sleep(1000);
 
         charger.SendStatusNotification(status: "Charging");
+
+        while (!step3)
         Thread.Sleep(1000);
 
-       return passed;
+        return passed;
     }
 }

@@ -19,9 +19,10 @@ public class TC_005_1_CSMS : IScenario
         ws.Connect();
 
         Charger charger = new Charger(ws);
-        int i = 1;
+        
         int transid = 0;
         bool passed = false;
+        bool step1 = false, step2 = false, step3 = false, step4 = false, step5 = false, step6 = false, step7 = false;
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -30,16 +31,18 @@ public class TC_005_1_CSMS : IScenario
            if (j == null)
                return;
 
-           if (i == 1)
+           if (!step1)
            {
-               i++;
+               
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
+                
+                step1 = true;
 
            }
-           else if (i == 2)
+           else if (!step2)
            {
-               i++;
+               
 
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
                    throw new Exception("Invalid response");
@@ -51,59 +54,84 @@ public class TC_005_1_CSMS : IScenario
                }
                transid = j["transactionId"].Value<int>();
 
+               step2 = true;
+
            }
-           else if (i == 3)
+           else if (!step3)
            {
-               i++;
+
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
+                
+                step3 = true;
            }
-           else if (i == 4)
+           else if (!step4)
            {
-               i++;
+               
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
+                
+                step4 = true;
            }
-           else if (i == 5)
+           else if (!step5)
            {
-               i++;
+               
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StopTransactionResponse.json")))
                    throw new Exception("Invalid response");
+                
+                step5 = true;
            }
-           else if (i == 6)
+           else if (!step6)
            {
-               i++;
+               
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
+
+                step6 = true;
            }
-           else if (i == 7)
+           else if (!step7)
            {
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
 
+                step7 = true;
                 passed = true;
            }
        };
 
         charger.SendStatusNotification(status: "Preparing");
+
+        while (!step1)
         Thread.Sleep(1000);
 
         charger.SendStartTransaction();
+
+        while (!step2)
         Thread.Sleep(1000);
 
         charger.SendStatusNotification(status: "Charging");
+
+        while (!step3)
         Thread.Sleep(1000);
 
         charger.SendStatusNotification(status: "SuspendedEV");
+
+        while (!step4)
         Thread.Sleep(1000);
 
         charger.SendStopTransaction(transid.ToString());
+
+        while (!step5)
         Thread.Sleep(1000);
 
         charger.SendStatusNotification(status: "Finishing");
+
+        while (!step6)
         Thread.Sleep(1000);
 
         charger.SendStatusNotification();
+
+        while (!step7)
         Thread.Sleep(1000);
 
         return passed;
