@@ -10,10 +10,16 @@ namespace ocpp;
 public class CentralSystem : System
 {
     WebSocketServer? server = null;
-    public CentralSystem(int port) : base()
+    public CentralSystem(int port, bool secure = false) : base()
     {
         server = new WebSocketServer(port);
         server.AddWebSocketService<CSMSSimulator>("/ocpp_csms_simulator");
+
+        if (secure)
+        {
+            //set the SSL options
+        }
+        
         server.Start();
     }
 
@@ -76,7 +82,7 @@ public class CentralSystem : System
 
             Console.WriteLine("Running scenario: " + s.GetType().ToString());
 
-            var task = Task.Run(() => s.RunScenario(this.Socket));
+            var task = Task.Run(() => s.RunScenario(Socket));
             if (task.Wait(TimeSpan.FromSeconds(120)))
             {
                 if (task.Result)
@@ -94,5 +100,4 @@ public class CentralSystem : System
             }
         }
     }
-
 }
