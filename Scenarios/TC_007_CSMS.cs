@@ -54,7 +54,7 @@ public class TC_007_CSMS : IScenario
         }
     }
 
-        public bool RunScenario(string url, string protocol)
+    public bool RunScenario(string url, string protocol)
     {
         using var ws = new WebSocket(url, protocol);
         ws.Connect();

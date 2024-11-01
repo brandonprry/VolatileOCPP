@@ -7,6 +7,26 @@ namespace ocpp;
 
 public abstract class System
 {
+    string _url = string.Empty;
+    string _protocol = string.Empty;
+    string[] rpcMethods = Utility.Methods;
+    string[] validResponses = [
+        "NotImplemented",
+            "NotSupported",
+            "InternalError",
+            "ProtocolError",
+            "SecurityError",
+            "FormationViolation",
+            "PropertyConstraintViolation",
+            "OccurenceConstraintViolation",
+            "TypeConstraintViolation",
+            "GenericError"
+    ];
+
+    List<string> less = new List<string>();
+    List<string> more = new List<string>();
+    string currentMethod = string.Empty;
+    
     public System()
     {
     }
@@ -17,7 +37,6 @@ public abstract class System
 
         Socket = ws;
     }
-
 
     public System(string url, string protocol)
     {
@@ -33,24 +52,13 @@ public abstract class System
         ws.OnError += (sender, e) =>
         {
             Console.WriteLine("Error");
-            return;
         };
 
-        //ws.OnMessage += (sender, e) =>
-        //{
-        //    Console.WriteLine("Laputa says: " + e.Data);
-        //};
-
         ws.Connect();
-        //ws.
 
         Socket = ws;
-
-
     }
 
-    string _url = string.Empty;
-    string _protocol = string.Empty;
     public string[]? SupportedMethods { get; set; }
 
     public string[]? UnsupportedMethods { get; set; }
@@ -101,58 +109,42 @@ public abstract class System
         Socket.Send(" [2, \"29e7a835-6ff6-4cf8-90e6-5d51182f8fde\", \"DataTransfer\", {\"vendorId\": \"" + vendorId + "\", \"messageId\": \"" + messageId + "\", \"data\": \"" + data + "\"}]");
     }
 
-    public void GetMethods()
+    public void ParseImplementedMethods(object sender, MessageEventArgs e)
     {
-        string[] rpcMethods = Utility.Methods;
-        string[] validResponses = [
-            "NotImplemented",
-            "NotSupported",
-            "InternalError",
-            "ProtocolError",
-            "SecurityError",
-            "FormationViolation",
-            "PropertyConstraintViolation",
-            "OccurenceConstraintViolation",
-            "TypeConstraintViolation",
-            "GenericError"
-        ];
+        JToken[] ret = JArray.Parse(e.Data).ToArray<JToken>();
+        string? tmp = string.Empty;
+        JObject? obj;
 
-        List<string> less = new List<string>();
-        List<string> more = new List<string>();
-        string currentMethod = string.Empty;
-        Socket.OnMessage += (sender, e) =>
+        if (ret[2].Type == JTokenType.String)
         {
-            JToken[] ret = JArray.Parse(e.Data).ToArray<JToken>();
-            string? tmp = string.Empty;
-            JObject? obj;
+            tmp = ret[2].Value<string>();
 
-            if (ret[2].Type == JTokenType.String)
+            if (!validResponses.Contains(tmp))
+                throw new Exception(tmp);
+
+            if (tmp == "NotImplemented" || tmp == "NotSupported")
             {
-                tmp = ret[2].Value<string>();
-
-                if (!validResponses.Contains(tmp))
-                    throw new Exception(tmp);
-
-                if (tmp == "NotImplemented" || tmp == "NotSupported")
-                {
-                    less.Add(currentMethod);
-                }
-                else
-                {
-                    if (tmp == "InternalError")
-                    {
-                        more.Add(currentMethod);
-                        Console.WriteLine("Supports method: " + currentMethod);
-                    }
-                }
+                less.Add(currentMethod);
             }
             else
             {
-                obj = ret[2] as JObject;
-                more.Add(currentMethod);
-                Console.WriteLine("Supports method: " + currentMethod);
+                if (tmp == "InternalError")
+                {
+                    more.Add(currentMethod);
+                    Console.WriteLine("Supports method: " + currentMethod);
+                }
             }
-        };
+        }
+        else
+        {
+            obj = ret[2] as JObject;
+            more.Add(currentMethod);
+            Console.WriteLine("Supports method: " + currentMethod);
+        }
+    }
+    public void GetMethods()
+    {
+        Socket.OnMessage += ParseImplementedMethods;
 
         foreach (string method in rpcMethods)
         {
@@ -164,6 +156,7 @@ public abstract class System
 
         this.SupportedMethods = more.ToArray();
         this.UnsupportedMethods = less.ToArray();
-        //Console.WriteLine("Done");
+
+        Socket.OnMessage -= ParseImplementedMethods;
     }
 }

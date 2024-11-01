@@ -33,16 +33,16 @@ public class TC_023_1_CSMS : IScenario
         step1 = true;
         passed = true;
     }
-        public bool RunScenario(string url, string protocol)
+
+    public bool RunScenario(string url, string protocol)
     {
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
         return RunScenario(ws);
     }
+
     public bool RunScenario(WebSocket ws)
     {
-
-
         Charger charger = new Charger(ws);
         ws.OnMessage += OnMessage;
 
