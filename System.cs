@@ -26,7 +26,7 @@ public abstract class System
     List<string> less = new List<string>();
     List<string> more = new List<string>();
     string currentMethod = string.Empty;
-    
+
     public System()
     {
     }
@@ -59,6 +59,13 @@ public abstract class System
         Socket = ws;
     }
 
+    public string CurrentTransactionID { get; private set; }
+
+
+    public string CurrentAuthorizationStatus { get; private set; }
+
+    public string IDTag { get; set; }
+
     public string[]? SupportedMethods { get; set; }
 
     public string[]? UnsupportedMethods { get; set; }
@@ -73,10 +80,20 @@ public abstract class System
     {
         Socket.Send("[2,\"852a4cb2-0e20-46f8-bc29-c5ab3cb182c7\",\"BootNotification\",{\"chargePointVendor\":\"" + chargePointVendor + "\",\"chargePointModel\":\"" + chargePointModel + "\"}]");
     }
+    public void GetStatusNotificationResult(object sender, MessageEventArgs e)
+    {
+        JArray a = JArray.Parse(e.Data);
+        JObject? j = a[2] as JObject;
 
+        if (!Utility.ValidateJSON(j, File.ReadAllText(Utility.ProjectDirectory + "/v1.6_schemas/schemas/StatusNotificationResponse.json")))
+            throw new Exception("Invalid response");
+    }
     public void SendStatusNotification(string connectorId = "0", string errorCode = "NoError", string status = "Available")
     {
+        Socket.OnMessage += GetStatusNotificationResult;
         Socket.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":\"" + connectorId + "\",\"errorCode\":\"" + errorCode + "\",\"status\":\"" + status + "\"}]");
+        Thread.Sleep(1000);
+        Socket.OnMessage -= GetStatusNotificationResult;
     }
 
     public void SendHeartbeat()
@@ -84,19 +101,84 @@ public abstract class System
         Socket.Send("[2, \"a187bcd6-4042-4a82-b6d4-b4c55d2f2c8b\", \"Heartbeat\", {}]");
     }
 
-    public void SendAuthorize(string idTag = "volatileocpp")
+    public void GetAuthorizeResult(object sender, MessageEventArgs e)
     {
-        Socket.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"" + idTag + "\"}]");
+        JArray a = JArray.Parse(e.Data);
+        JObject? j = a[2] as JObject;
+
+        if (!Utility.ValidateJSON(j, File.ReadAllText(Utility.ProjectDirectory + "/v1.6_schemas/schemas/AuthorizeResponse.json")))
+            throw new Exception("Invalid response");
+
+        if (j["idTagInfo"] != null && j["idTagInfo"]["status"] != null)
+            CurrentAuthorizationStatus = j["idTagInfo"]["status"].Value<string>();
+
     }
 
+    public void SendAuthorize(string idTag = "volatileocpp", bool verify = false)
+    {
+        CurrentAuthorizationStatus = "Waiting";
+        IDTag = idTag;
+
+        Socket.OnMessage += GetAuthorizeResult;
+        Socket.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"" + idTag + "\"}]");
+        Thread.Sleep(1000);
+
+        if (verify)
+        {
+            while (CurrentAuthorizationStatus != "Accepted")
+            {
+                Console.WriteLine("ID Tag " + IDTag + " is not authorized. Currenly the credentials are " + CurrentAuthorizationStatus);
+                Thread.Sleep(1000);
+
+                Socket.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"" + idTag + "\"}]");
+            }
+        }
+
+        Socket.OnMessage -= GetAuthorizeResult;
+
+    }
+
+    public void GetStartTransactionResult(object sender, MessageEventArgs e)
+    {
+        JArray a = JArray.Parse(e.Data);
+        JObject? j = a[2] as JObject;
+
+        if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
+            throw new Exception("Invalid response");
+
+        if (j["idTagInfo"] == null ||
+            j["idTagInfo"]["status"] == null ||
+            j["idTagInfo"]["status"].Value<string>() != "Accepted")
+            throw new Exception("Invalid response");
+
+        CurrentTransactionID = j["transactionId"].Value<string>();
+
+    }
     public void SendStartTransaction(string connectorId = "1", string idTag = "volatileocpp", string meterStart = "42", string timestamp = "2017-10-27T19:10:11Z")
     {
+        Socket.OnMessage += GetStartTransactionResult;
         Socket.Send("[2,\"dddb2599-d678-4ff8-bf38-a230390a1200\",\"StartTransaction\",{\"connectorId\":\"" + connectorId + "\",\"idTag\":\"" + idTag + "\",\"meterStart\":\"" + meterStart + "\",\"timestamp\":\"" + timestamp + "\"}]");
+        Thread.Sleep(1000);
+        Socket.OnMessage -= GetStartTransactionResult;
     }
 
-    public void SendStopTransaction(string transid, string idTag = "volatileocpp", string meterStart = "42", string timestamp = "2024-10-27T19:10:11Z", string reason = "Other")
+    public void GetStopTransactionResult(object sender, MessageEventArgs e)
     {
-        Socket.Send("[2,\"dddb2599-d678-4ff8-bf38-a230390a1200\",\"StopTransaction\",{\"reason\":\"" + reason + "\",\"transactionId\":\"" + transid + "\",\"idTag\":\"" + idTag + "\",\"meterStart\":\"" + meterStart + "\",\"timestamp\":\"" + timestamp + "\"}]");
+        JArray a = JArray.Parse(e.Data);
+        JObject? j = a[2] as JObject;
+
+        if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StopTransactionResponse.json")))
+            throw new Exception("Invalid response");
+
+
+    }
+
+    public void SendStopTransaction(string transid, string idTag = "volatileocpp", string meterStop = "42", string timestamp = "2024-10-27T19:10:11Z", string reason = "Other")
+    {
+        Socket.OnMessage += GetStopTransactionResult;
+        Socket.Send("[2,\"dddb2599-d678-4ff8-bf38-a230390a1200\",\"StopTransaction\",{\"reason\":\"" + reason + "\",\"transactionId\":\"" + transid + "\",\"idTag\":\"" + idTag + "\",\"meterStop\":\"" + meterStop + "\",\"timestamp\":\"" + timestamp + "\"}]");
+        Thread.Sleep(1000);
+        Socket.OnMessage -= GetStopTransactionResult;
     }
 
     public void SendRemoteStartTransaction(string connectorId = "1", string idTag = "volatileocpp")
