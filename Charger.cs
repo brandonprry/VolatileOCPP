@@ -26,12 +26,13 @@ public class Charger : System
 
         SendStatusNotification("1", "NoError", "Preparing");
 
-        int charge = 42;
-        SendStartTransaction(meterStart: charge.ToString(), connectorId: ConnectorID);
+        int charge = new Random().Next(5, 30);
+        SendStartTransaction(meterStart: charge.ToString(), connectorId: ConnectorID, idTag: IDTag, timestamp: DateTime.UtcNow.ToString("s") + "Z");
 
         SendStatusNotification("1", "NoError", "Charging");
 
-        while (charge < 99)
+        int max = new Random().Next(50, 100);
+        while (charge < max)
         {
             Console.WriteLine("Charger " + IDTag + " connector " + ConnectorID + " is charging at " + charge + "%");
             charge += 1;
@@ -40,13 +41,9 @@ public class Charger : System
 
         SendStatusNotification("1", "NoError", "Finishing");
 
-
-        SendStopTransaction(CurrentTransactionID, meterStop: "99", idTag: IDTag);
+        SendStopTransaction(CurrentTransactionID, meterStop: "99", idTag: IDTag, timestamp: DateTime.UtcNow.ToString("s") + "Z");
 
         SendStatusNotification("1", "NoError", "Available");
-
-
-
     }
 
     public IScenario[] GetScenarios()
