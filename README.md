@@ -89,3 +89,29 @@ Running scenario: ocpp.Scenarios.TC_064_CSMS
 WARNING: DataTransfer Response ACCEPTED
         -- PASSED!
 ```
+
+## Simulating Chargers for your CSMS
+
+Some basic charger simulations can be performed.
+
+```
+        string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
+        string protocol = "ocpp1.6";
+
+        List<Task> tasks = new List<Task>();
+        for (int i = 1; i< 11; i++)
+        {
+            Charger c = new Charger(url, protocol);
+            c.ConnectorID = i.ToString();
+            c.IDTag = "volatileocpp";
+            tasks.Add(Task.Run(c.Simulate));
+        }
+
+        foreach (Task t in tasks)
+            t.Wait();
+```
+
+![image](https://github.com/user-attachments/assets/9fed843c-df94-4b5e-9de3-e64612f88b75)
+
+![image](https://github.com/user-attachments/assets/3bac011f-0720-4e4d-9868-c4b5ecb3a4ce)
+
