@@ -234,10 +234,10 @@ public abstract class System
 
 
     }
-    public void SendMeterValues(string connectorId = "0", string transactionId = "1", string timestamp = "2024-10-27T19:10:11Z", string value ="42")
+    public void SendMeterValues(string connectorId = "0", string transactionId = "1", string timestamp = "2024-10-27T19:10:11Z", string value ="42", string context = "Sample.Periodic", string measurand = "Energy.Active.Import.Register", string unit = "kWh")
     {
         Socket.OnMessage += GetSendMeterValuesResult;
-        Socket.Send("    [2, \"a187bcd6-4042-4a82-b6d4-b4c55d2f2bef\", \"MeterValues\", {\"connectorId\":\""+connectorId+"\", \"transactionId\": \""+transactionId+"\", \"meterValue\": [{\"timestamp\": \""+timestamp+"\", \"sampledValue\": [{\"value\": \""+value+"\", \"context\": \"Trigger\", \"format\": \"SignedData\", \"measurand\": \"Power.Active.Export\", \"phase\": \"L1\", \"location\":\"Cable\", \"unit\": \"kWh\"}]}]}],");
+        Socket.Send("    [2, \"a187bcd6-4042-4a82-b6d4-b4c55d2f2bef\", \"MeterValues\", {\"connectorId\":\""+connectorId+"\", \"transactionId\": \""+transactionId+"\", \"meterValue\": [{\"timestamp\": \""+timestamp+"\", \"sampledValue\": [{\"value\": \""+value+"\", \"context\": \""+context+"\", \"format\": \"Raw\", \"measurand\": \""+measurand+"\", \"phase\": \"L1\", \"location\":\"Outlet\", \"unit\": \""+unit+"\"}]}]}],");
         Thread.Sleep(1000);
         Socket.OnMessage -= GetSendMeterValuesResult;
     }
