@@ -72,13 +72,34 @@ public abstract class System
 
     public string URL { get { return _url; } }
 
+    public int HeartbeatInterval { get; set; }
+
     public string Protocol { get { return _protocol; } }
 
     public WebSocket Socket { get; protected set; }
 
+        public void GetBootNotificationResult(object sender, MessageEventArgs e)
+    {
+        JArray a = JArray.Parse(e.Data);
+        JObject? j = a[2] as JObject;
+
+        if (!Utility.ValidateJSON(j, File.ReadAllText(Utility.ProjectDirectory + "/v1.6_schemas/schemas/BootNotificationResponse.json")))
+            throw new Exception("Invalid response");
+        
+        if (j["idTagInfo"] != null && j["idTagInfo"]["status"] != null && j["idTagInfo"]["status"].Value<string >() != "Accepted")
+            throw new Exception("Invalid response");
+
+        if (j["idTagInfo"] != null && j["idTagInfo"]["status"] != null)
+            HeartbeatInterval = j["idTagInfo"]["interval"].Value<int>();
+
+    }
+
     public void SendBootNotification(string chargePointVendor = "volatileocpp Vendor", string chargePointModel = "volatileocpp Model")
     {
+        Socket.OnMessage += GetBootNotificationResult;
         Socket.Send("[2,\"852a4cb2-0e20-46f8-bc29-c5ab3cb182c7\",\"BootNotification\",{\"chargePointVendor\":\"" + chargePointVendor + "\",\"chargePointModel\":\"" + chargePointModel + "\"}]");
+        Thread.Sleep(1000);
+        Socket.OnMessage -= GetBootNotificationResult;
     }
     public void GetStatusNotificationResult(object sender, MessageEventArgs e)
     {
@@ -96,9 +117,21 @@ public abstract class System
         Socket.OnMessage -= GetStatusNotificationResult;
     }
 
+    public void GetHeartbeatResult(object sender, MessageEventArgs e)
+    {
+        JArray a = JArray.Parse(e.Data);
+        JObject? j = a[2] as JObject;
+
+        if (!Utility.ValidateJSON(j, File.ReadAllText(Utility.ProjectDirectory + "/v1.6_schemas/schemas/HeartbeatResponse.json")))
+            throw new Exception("Invalid response");
+    }
+
     public void SendHeartbeat()
     {
+        Socket.OnMessage += GetHeartbeatResult;
         Socket.Send("[2, \"a187bcd6-4042-4a82-b6d4-b4c55d2f2c8b\", \"Heartbeat\", {}]");
+        Thread.Sleep(1000);
+        Socket.OnMessage -= GetHeartbeatResult;
     }
 
     public void GetAuthorizeResult(object sender, MessageEventArgs e)
@@ -189,6 +222,24 @@ public abstract class System
     public void SendDataTransfer(string vendorId = "volatileocpp", string messageId = "MessageID", string data = "Data")
     {
         Socket.Send(" [2, \"29e7a835-6ff6-4cf8-90e6-5d51182f8fde\", \"DataTransfer\", {\"vendorId\": \"" + vendorId + "\", \"messageId\": \"" + messageId + "\", \"data\": \"" + data + "\"}]");
+    }
+
+    public void GetSendMeterValuesResult(object sender, MessageEventArgs e)
+    {
+        JArray a = JArray.Parse(e.Data);
+        JObject? j = a[2] as JObject;
+
+        if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/MeterValuesResponse.json")))
+            throw new Exception("Invalid response");
+
+
+    }
+    public void SendMeterValues(string connectorId = "0", string transactionId = "1", string timestamp = "2024-10-27T19:10:11Z", string value ="42")
+    {
+        Socket.OnMessage += GetSendMeterValuesResult;
+        Socket.Send("    [2, \"a187bcd6-4042-4a82-b6d4-b4c55d2f2bef\", \"MeterValues\", {\"connectorId\":\""+connectorId+"\", \"transactionId\": \""+transactionId+"\", \"meterValue\": [{\"timestamp\": \""+timestamp+"\", \"sampledValue\": [{\"value\": \""+value+"\", \"context\": \"Trigger\", \"format\": \"SignedData\", \"measurand\": \"Power.Active.Export\", \"phase\": \"L1\", \"location\":\"Cable\", \"unit\": \"kWh\"}]}]}],");
+        Thread.Sleep(1000);
+        Socket.OnMessage -= GetSendMeterValuesResult;
     }
 
     public void ParseImplementedMethods(object sender, MessageEventArgs e)
