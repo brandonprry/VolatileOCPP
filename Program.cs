@@ -14,7 +14,7 @@ public class Program
         {
             Charger c = new Charger(url, protocol);
             c.ConnectorID = i.ToString();
-            c.IDTag = "volatileocpp-" + i;
+            c.IDTag = "volatileocpp";
             tasks.Add(Task.Run(c.Simulate));
         }
 
