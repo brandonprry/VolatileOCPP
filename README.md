@@ -11,7 +11,7 @@ CentralSystem s = new CentralSystem(url, protocol);
 s.RunScenarios();
 ```
 
-Scenarios can be run against the SteVe OCPP Server implementation as a testbed. Create a ChargeBox ID and OCCP TD tag "volatileocpp".
+Scenarios can be run against the SteVe OCPP Server implementation as a testbed. Create a ChargeBox ID and OCPP TD tag "volatileocpp".
 
 Scenario implementations are built based directly on the CompliancyTestTool PDF included within the repository. Not every scenario is implemented. Many will be implemented in time. Some will be implemented when software/hardware that implements it gets tested.
 
