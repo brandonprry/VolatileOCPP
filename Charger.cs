@@ -8,15 +8,15 @@ public class Charger : EVSESystem
 {
     public Charger(string url, string protocol, string username = null, string password = null) : base(url, protocol, username, password)
     {
-        ConnectorID = "1";
+        ConnectorID = 1;
     }
 
     public Charger(WebSocket ws) : base(ws)
     {
-        ConnectorID = "1";
+        ConnectorID = 1;
     }
 
-    public string ConnectorID { get; set; }
+    public int ConnectorID { get; set; }
 
     public Dictionary<string, string> Parameters { get; set; }
 

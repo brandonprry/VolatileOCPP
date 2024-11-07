@@ -82,12 +82,12 @@ public class TC_003_CSMS : IScenario
 
         ws.OnMessage += OnMessage;
 
-        charger.SendStatusNotification("1", "NoError", "Preparing");
+        charger.SendStatusNotification(0, "NoError", "Preparing");
 
         while (!step1)
             Thread.Sleep(1000);
 
-        charger.SendAuthorize();
+        charger.SendAuthorize("5");
 
         while (!step2)
             Thread.Sleep(1000);
@@ -97,7 +97,7 @@ public class TC_003_CSMS : IScenario
         while (!step3)
             Thread.Sleep(1000);
 
-        charger.SendStatusNotification("1", "NoError", "Charging");
+        charger.SendStatusNotification(0, "NoError", "Charging");
 
         while (!step4)
             Thread.Sleep(1000);

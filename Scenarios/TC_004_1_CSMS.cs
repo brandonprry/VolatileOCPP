@@ -71,7 +71,7 @@ public class TC_004_1_CSMS
 
         ws.OnMessage += OnMessage;
 
-        charger.SendStatusNotification("1", "NoError", "Preparing");
+        charger.SendStatusNotification(1, "NoError", "Preparing");
 
         while (!step1)
             Thread.Sleep(1000);
@@ -81,7 +81,7 @@ public class TC_004_1_CSMS
         while (!step2)
             Thread.Sleep(1000);
 
-        charger.SendStatusNotification("1", "NoError", "Charging");
+        charger.SendStatusNotification(1, "NoError", "Charging");
 
         while (!step3)
             Thread.Sleep(1000);
