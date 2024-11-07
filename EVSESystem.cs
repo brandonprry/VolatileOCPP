@@ -46,11 +46,13 @@ public abstract class EVSESystem
         _protocol = protocol;
 
         WebSocket ws = new WebSocket(url, protocol);
+        ws.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
+
        
         if (username != null)
             ws.SetCredentials(username, password, true);
 
-        //ws.SetProxy("http://127.0.0.1:8080", null, null);
+        ws.SetProxy("http://127.0.0.1:8080", null, null);
 
         ws.OnError += (sender, e) =>
         {
