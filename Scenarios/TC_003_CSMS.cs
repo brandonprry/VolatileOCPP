@@ -87,7 +87,7 @@ public class TC_003_CSMS : IScenario
         while (!step1)
             Thread.Sleep(1000);
 
-        charger.SendAuthorize("5");
+        charger.SendAuthorize();
 
         while (!step2)
             Thread.Sleep(1000);
