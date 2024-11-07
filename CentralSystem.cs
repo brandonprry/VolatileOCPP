@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ocpp;
 
-public class CentralSystem : System
+public class CentralSystem : EVSESystem
 {
     WebSocketServer? server = null;
     public CentralSystem(int port, bool secure = false) : base()
@@ -28,8 +28,8 @@ public class CentralSystem : System
 
     }
 
-    public CentralSystem(string url, string protocol)
-    : base(url, protocol)
+    public CentralSystem(string url, string protocol, string username = null, string password = null)
+    : base(url, protocol, username, password)
     {
 
     }
