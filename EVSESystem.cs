@@ -262,7 +262,7 @@ public abstract class EVSESystem
             }
             else
             {
-                if (tmp == "InternalError")
+                if (tmp == "InternalError" || tmp == "FormatViolation")
                 {
                     more.Add(currentMethod);
                     Console.WriteLine("Supports method: " + currentMethod);
