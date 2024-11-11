@@ -3,7 +3,7 @@
 messages = [
     [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "CancelReservation",
   {
     "customData": {
@@ -14,7 +14,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "CertificateSigned",
   {
     "customData": {
@@ -26,7 +26,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearCache",
   {
     "customData": {
@@ -36,7 +36,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearChargingProfile",
   {
     "customData": {
@@ -55,7 +55,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearDisplayMessage",
   {
     "customData": {
@@ -66,7 +66,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearVariableMonitoring",
   {
     "customData": {
@@ -79,7 +79,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearedChargingLimit",
   {
     "customData": {
@@ -91,7 +91,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "CostUpdated",
   {
     "customData": {
@@ -103,7 +103,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "CustomerInformation",
   {
     "customData": {
@@ -142,7 +142,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "DeleteCertificate",
   {
     "customData": {
@@ -161,7 +161,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "Get15118EVCertificate",
   {
     "customData": {
@@ -174,7 +174,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetBaseReport",
   {
     "customData": {
@@ -186,7 +186,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetCertificateStatus",
   {
     "customData": {
@@ -206,7 +206,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetChargingProfiles",
   {
     "customData": {
@@ -231,7 +231,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetDisplayMessages",
   {
     "customData": {
@@ -247,7 +247,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetInstalledCertificateIds",
   {
     "customData": {
@@ -260,7 +260,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetLog",
   {
     "customData": {
@@ -282,7 +282,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetMonitoringReport",
   {
     "customData": {
@@ -324,7 +324,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetReport",
   {
     "customData": {
@@ -366,7 +366,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetTransactionStatus",
   {
     "customData": {
@@ -377,7 +377,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetVariables",
   {
     "customData": {
@@ -416,7 +416,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "InstallCertificate",
   {
     "customData": {
@@ -428,7 +428,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "LogStatusNotification",
   {
     "customData": {
@@ -440,7 +440,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyChargingLimit",
   {
     "customData": {
@@ -513,7 +513,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyCustomerInformation",
   {
     "customData": {
@@ -528,7 +528,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyDisplayMessages",
   {
     "customData": {
@@ -575,7 +575,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyEVChargingNeeds",
   {
     "customData": {
@@ -616,7 +616,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyEVChargingSchedule",
   {
     "customData": {
@@ -685,7 +685,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyEvent",
   {
     "customData": {
@@ -737,7 +737,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyMonitoringReport",
   {
     "customData": {
@@ -791,7 +791,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyReport",
   {
     "customData": {
@@ -856,7 +856,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "PublishFirmware",
   {
     "customData": {
@@ -871,7 +871,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "PublishFirmwareStatusNotification",
   {
     "customData": {
@@ -886,7 +886,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ReportChargingProfiles",
   {
     "customData": {
@@ -958,7 +958,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "StartTransactionRequest",
   {
     "customData": {
@@ -1065,7 +1065,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "StopTransactionRequest",
   {
     "customData": {
@@ -1076,7 +1076,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ReservationStatusUpdate",
   {
     "customData": {
@@ -1088,7 +1088,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SecurityEventNotification",
   {
     "customData": {
@@ -1101,7 +1101,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetDisplayMessage",
   {
     "customData": {
@@ -1144,7 +1144,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetMonitoringBase",
   {
     "customData": {
@@ -1155,7 +1155,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetMonitoringLevel",
   {
     "customData": {
@@ -1166,7 +1166,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetNetworkProfile",
   {
     "customData": {
@@ -1211,7 +1211,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetVariableMonitoring",
   {
     "customData": {
@@ -1254,7 +1254,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetVariables",
   {
     "customData": {
@@ -1294,7 +1294,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SignCertificate",
   {
     "customData": {
@@ -1306,7 +1306,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "TransactionEvent",
   {
     "customData": {
@@ -1393,7 +1393,7 @@ messages = [
 ],
 [
   2,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "UnpublishFirmware",
   {
     "customData": {
@@ -1410,7 +1410,7 @@ messages = [
     [2,"8d59bc8c-9884-4d64-82b5-3819d0c58b8a","Authorize",{"idTag":"volatileocpp"}],
     [2,"dddb2599-d678-4ff8-bf38-a230390a1200","StartTransaction",{"connectorId":"1","idTag":"volatileocpp","meterStart":"42","timestamp":"2017-10-27T19:10:11Z"}],
    [2,"9b25cbb0-c016-41e7-baa0-e796a9565c11","StatusNotification",{"connectorId":"1","errorCode":"NoError","status":"Available"}],
-    [2,"29e7a835-6ff6-4cf8-90e6-5d51182f8fdb","StopTransaction",{"idTag":"volatileocpp", "reason":"PowerLoss" "meterStop":"41","timestamp":"2017-10-27T19:10:11Z","transactionId":"1"}],
+    [2,"29e7a835-6ff6-4cf8-90e6-5d51182f8fdb","StopTransaction",{"idTag":"volatileocpp", "reason":"PowerLoss", "meterStop":"41","timestamp":"2017-10-27T19:10:11Z","transactionId":"1"}],
     [2, "29e7a835-6ff6-4cf8-90e6-5d51182f8fde", "DataTransfer", {"vendorId": "Radboud", "messageId": "No-Idea", "data": "There should be some data here"}],
     [2, "29e7a835-6ff6-4cf8-90e6-5d51182f8fdf", "DiagnosticsStatusNotification", {"status": "Uploading"}],
     [2, "29e7a835-6ff6-4cf8-90e6-5d51182f8bea", "FirmwareStatusNotification", {"status": "DownloadFailed"}],
@@ -1433,7 +1433,7 @@ messages = [
 responses = [
     [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "Authorize",
   {
     "customData": {
@@ -1481,7 +1481,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "BootNotification",
   {
     "customData": {
@@ -1501,7 +1501,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "CancelReservation",
   {
     "customData": {
@@ -1519,7 +1519,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "CertificateSigned",
   {
     "customData": {
@@ -1537,7 +1537,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ChangeAvailability",
   {
     "customData": {
@@ -1555,7 +1555,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearCache",
   {
     "customData": {
@@ -1573,7 +1573,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearChargingProfile",
   {
     "customData": {
@@ -1591,7 +1591,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearDisplayMessage",
   {
     "customData": {
@@ -1609,7 +1609,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearVariableMonitoring",
   {
     "customData": {
@@ -1635,7 +1635,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ClearedChargingLimit",
   {
     "customData": {
@@ -1645,7 +1645,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "CostUpdated",
   {
     "customData": {
@@ -1655,7 +1655,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "CustomerInformation",
   {
     "customData": {
@@ -1673,7 +1673,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "DataTransfer",
   {
     "customData": {
@@ -1687,12 +1687,12 @@ responses = [
       "reasonCode": "string",
       "additionalInfo": "string"
     },
-    "data": null
+    "data": ""
   }
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "DeleteCertificate",
   {
     "customData": {
@@ -1710,7 +1710,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "FirmwareStatusNotification",
   {
     "customData": {
@@ -1720,7 +1720,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "Get15118EVCertificate",
   {
     "customData": {
@@ -1739,7 +1739,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetBaseReport",
   {
     "customData": {
@@ -1757,7 +1757,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetCertificateStatus",
   {
     "customData": {
@@ -1776,7 +1776,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetChargingProfiles",
   {
     "customData": {
@@ -1794,7 +1794,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetCompositeSchedule",
   {
     "customData": {
@@ -1832,7 +1832,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetDisplayMessages",
   {
     "customData": {
@@ -1850,7 +1850,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetInstalledCertificateIds",
   {
     "customData": {
@@ -1896,7 +1896,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetLocalListVersion",
   {
     "customData": {
@@ -1907,7 +1907,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetLog",
   {
     "customData": {
@@ -1926,7 +1926,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetMonitoringReport",
   {
     "customData": {
@@ -1944,7 +1944,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetReport",
   {
     "customData": {
@@ -1962,19 +1962,19 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetTransactionStatus",
   {
     "customData": {
       "vendorId": "string"
     },
-    "ongoingIndicator": true,
-    "messagesInQueue": true
+    "ongoingIndicator": True,
+    "messagesInQueue": True
   }
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "GetVariables",
   {
     "customData": {
@@ -2022,7 +2022,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "Heartbeat",
   {
     "customData": {
@@ -2033,7 +2033,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "InstallCertificate",
   {
     "customData": {
@@ -2051,7 +2051,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "LogStatusNotification",
   {
     "customData": {
@@ -2061,7 +2061,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "MeterValues",
   {
     "customData": {
@@ -2071,7 +2071,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyChargingLimit",
   {
     "customData": {
@@ -2081,7 +2081,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyCustomerInformation",
   {
     "customData": {
@@ -2091,7 +2091,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyDisplayMessages",
   {
     "customData": {
@@ -2101,7 +2101,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyEVChargingNeeds",
   {
     "customData": {
@@ -2119,7 +2119,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyEVChargingSchedule",
   {
     "customData": {
@@ -2137,7 +2137,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyEvent",
   {
     "customData": {
@@ -2147,7 +2147,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyMonitoringReport",
   {
     "customData": {
@@ -2157,7 +2157,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "NotifyReport",
   {
     "customData": {
@@ -2167,7 +2167,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "PublishFirmware",
   {
     "customData": {
@@ -2185,7 +2185,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "PublishFirmwareStatusNotification",
   {
     "customData": {
@@ -2195,7 +2195,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ReportChargingProfiles",
   {
     "customData": {
@@ -2205,7 +2205,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "StartTransaction",
   {
     "customData": {
@@ -2224,7 +2224,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "StopTransaction",
   {
     "customData": {
@@ -2242,7 +2242,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ReservationStatusUpdate",
   {
     "customData": {
@@ -2252,7 +2252,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "ReserveNow",
   {
     "customData": {
@@ -2270,7 +2270,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "Reset",
   {
     "customData": {
@@ -2288,7 +2288,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SecurityEventNotification",
   {
     "customData": {
@@ -2298,7 +2298,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SendLocalList",
   {
     "customData": {
@@ -2316,7 +2316,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetChargingProfile",
   {
     "customData": {
@@ -2334,7 +2334,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetDisplayMessage",
   {
     "customData": {
@@ -2352,7 +2352,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetMonitoringBase",
   {
     "customData": {
@@ -2370,7 +2370,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetMonitoringLevel",
   {
     "customData": {
@@ -2388,7 +2388,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetNetworkProfile",
   {
     "customData": {
@@ -2406,7 +2406,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetVariableMonitoring",
   {
     "customData": {
@@ -2455,7 +2455,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SetVariables",
   {
     "customData": {
@@ -2502,7 +2502,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "SignCertificate",
   {
     "customData": {
@@ -2520,7 +2520,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "StatusNotification",
   {
     "customData": {
@@ -2530,7 +2530,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "TransactionEvent",
   {
     "customData": {
@@ -2587,7 +2587,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "TriggerMessage",
   {
     "customData": {
@@ -2605,7 +2605,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "UnlockConnector",
   {
     "customData": {
@@ -2623,7 +2623,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "UnpublishFirmware",
   {
     "customData": {
@@ -2634,7 +2634,7 @@ responses = [
 ],
 [
   3,
-  "19223201",
+  "811D0937-A437-477D-BBA8-45EA8D4DF84D",
   "UpdateFirmware",
   {
     "customData": {
