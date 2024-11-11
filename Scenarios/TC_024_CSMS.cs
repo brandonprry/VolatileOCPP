@@ -25,7 +25,6 @@ public class TC_024_CSMS : IScenario
 
         if (!step1)
         {
-
             if (!Utility.ValidateJSON(j, File.ReadAllText(Utility.ProjectDirectory + "/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                 throw new Exception("Invalid response");
 
@@ -58,7 +57,7 @@ public class TC_024_CSMS : IScenario
         while (!step1)
             Thread.Sleep(1000);
 
-        charger.SendStatusNotification(errorCode: "ConnectorLockFault", status: "Faulted");
+        charger.SendStatusNotification(errorCode: "ConnectorLockFailure", status: "Faulted");
 
         while (!step2)
             Thread.Sleep(1000);
