@@ -15,15 +15,15 @@ from jsonschema import validate
 
 dir = os.path.dirname(__file__)
 
-def communicate(json_arr):
+def communicate(j):
     time.sleep(1) #seems inefficient at first but we don't want to overload anything
-    print json_arr
+    print j
     headers = {
        'Sec-WebSocket-Protocol': 'ocpp1.6'
     }
     ws = create_connection('ws://localhost:8180/steve/websocket/CentralSystemService/1', header=headers)
     #ws.settimeout(0.05)
-    ws.send(json_arr)
+    ws.send(json.dumps(j, ensure_ascii=False))
 
     try:
         result = ws.recv()
@@ -94,11 +94,10 @@ def test():
 
     if wf and testf:
         for m in messages:
-            m[1] = str(uuid.uuid4())
             print "\n\nNew message:"
             wf.write("----------------- New message -----------------\n")
             testf.write("----------------- New message -----------------\n")
-            communicate(json.dumps(m))
+            communicate(m)
             #if validate(m, req_schema) == None:
             #    print "Base message OK"
             for utf in [True, False]: # UTF8 insertion mode
@@ -109,14 +108,18 @@ def test():
                         wf.write("--- level = " + str(l) + " ---\n")
                         print("utf: {0} / strong fuzzing: {1} / level: {2}".format(utf, s, l))
                         testf.write("-- utf: {0} / strong fuzzing: {1} / level: {2} --\n".format(utf, s, l))
-                        config = PJFConfiguration(Namespace(json=m, nologo=True, level=l, strong_fuzz=s, utf8=utf))
+                        
+                        config = PJFConfiguration(Namespace(json=m, nologo=True, level=l, strong_fuzz=s))
                         fuzzer = PJFFactory(config)
                         for i in range(50):
+
                             if not t.isAlive():
                                 return
+                            
                             f = fuzzer.fuzzed
-
+                            
                             error = f + "\n"
+
                             result = communicate(f)
                             try:
                                 validation_request = validate_schema(f, req_schema)
