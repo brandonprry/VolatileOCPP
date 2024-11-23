@@ -22,6 +22,7 @@ https://github.com/thoughtworks/maeve-csms/
 Issues found and reported so far:
 
 https://github.com/steve-community/steve/issues/1609
+https://github.com/citrineos/citrineos/issues/61
 
 Unless your CS or CSMS implements every OCPP method, then not every scenario will apply to your implementation. Those scenarios will be skipped during execution. Most implementations will be a subset of the full OCPP specification.
 
