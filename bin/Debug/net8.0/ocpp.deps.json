@@ -10,7 +10,7 @@
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
           "Newtonsoft.Json.Schema": "4.0.1",
-          "WebSocketSharp-netstandard": "1.0.1"
+          "websocket-sharp-customheaders": "1.0.2.28050"
         },
         "runtime": {
           "ocpp.dll": {}
@@ -35,11 +35,11 @@
           }
         }
       },
-      "WebSocketSharp-netstandard/1.0.1": {
+      "websocket-sharp-customheaders/1.0.2.28050": {
         "runtime": {
-          "lib/netstandard2.0/websocket-sharp.dll": {
-            "assemblyVersion": "1.0.1.0",
-            "fileVersion": "1.0.1.0"
+          "lib/net35/websocket-sharp-customheaders.dll": {
+            "assemblyVersion": "1.0.2.28050",
+            "fileVersion": "0.0.0.0"
           }
         }
       }
@@ -65,12 +65,12 @@
       "path": "newtonsoft.json.schema/4.0.1",
       "hashPath": "newtonsoft.json.schema.4.0.1.nupkg.sha512"
     },
-    "WebSocketSharp-netstandard/1.0.1": {
+    "websocket-sharp-customheaders/1.0.2.28050": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-knoinAv31vbdxXdypnzN2MPX5hyntVLWceq6OdWRXkr9zzqp/RWbxSuLFGbkW8De1061URgNAN43BUTlgMx1CA==",
-      "path": "websocketsharp-netstandard/1.0.1",
-      "hashPath": "websocketsharp-netstandard.1.0.1.nupkg.sha512"
+      "sha512": "sha512-kIaUKtwnfemI5hQrYDlAKeXWY7v0iadCfiuErJVFE8OP4EhH25t/nL0g98cAxF4Q0+NC58aGpAj079sSndMPtw==",
+      "path": "websocket-sharp-customheaders/1.0.2.28050",
+      "hashPath": "websocket-sharp-customheaders.1.0.2.28050.nupkg.sha512"
     }
   }
 }

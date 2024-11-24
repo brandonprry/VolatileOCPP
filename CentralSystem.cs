@@ -1,5 +1,4 @@
 using System;
-using WebSocketSharp.Server;
 using ocpp.Scenarios;
 using WebSocketSharp;
 using System.Threading.Tasks;
@@ -9,18 +8,17 @@ namespace ocpp;
 
 public class CentralSystem : EVSESystem
 {
-    WebSocketServer? server = null;
+    //WebSocketServer? server = null;
     public CentralSystem(int port, bool secure = false) : base()
     {
-        server = new WebSocketServer(port);
-        server.AddWebSocketService<CSMSSimulator>("/ocpp_csms_simulator");
+        CSMSSimulator sim = new CSMSSimulator(9090);
 
         if (secure)
         {
             //set the SSL options
         }
         
-        server.Start();
+        //server.Start();
     }
 
     public CentralSystem(WebSocket ws) : base(ws)

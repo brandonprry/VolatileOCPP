@@ -31,17 +31,13 @@
           }
         }
       },
-      "WebSocketSharp-netstandard/1.0.1": {
+      "websocket-sharp-customheaders/1.0.2.28050": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/websocket-sharp.dll": {
-            "related": ".xml"
-          }
+          "lib/net35/websocket-sharp-customheaders.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/websocket-sharp.dll": {
-            "related": ".xml"
-          }
+          "lib/net35/websocket-sharp-customheaders.dll": {}
         }
       }
     }
@@ -101,21 +97,16 @@
         "packageIcon.png"
       ]
     },
-    "WebSocketSharp-netstandard/1.0.1": {
-      "sha512": "knoinAv31vbdxXdypnzN2MPX5hyntVLWceq6OdWRXkr9zzqp/RWbxSuLFGbkW8De1061URgNAN43BUTlgMx1CA==",
+    "websocket-sharp-customheaders/1.0.2.28050": {
+      "sha512": "kIaUKtwnfemI5hQrYDlAKeXWY7v0iadCfiuErJVFE8OP4EhH25t/nL0g98cAxF4Q0+NC58aGpAj079sSndMPtw==",
       "type": "package",
-      "path": "websocketsharp-netstandard/1.0.1",
+      "path": "websocket-sharp-customheaders/1.0.2.28050",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net35/websocket-sharp.dll",
-        "lib/net35/websocket-sharp.xml",
-        "lib/net45/websocket-sharp.dll",
-        "lib/net45/websocket-sharp.xml",
-        "lib/netstandard2.0/websocket-sharp.dll",
-        "lib/netstandard2.0/websocket-sharp.xml",
-        "websocketsharp-netstandard.1.0.1.nupkg.sha512",
-        "websocketsharp-netstandard.nuspec"
+        "lib/net35/websocket-sharp-customheaders.dll",
+        "websocket-sharp-customheaders.1.0.2.28050.nupkg.sha512",
+        "websocket-sharp-customheaders.nuspec"
       ]
     }
   },
@@ -123,7 +114,7 @@
     "net8.0": [
       "Newtonsoft.Json >= 13.0.3",
       "Newtonsoft.Json.Schema >= 4.0.1",
-      "WebSocketSharp-netstandard >= 1.0.1"
+      "websocket-sharp-customheaders >= 1.0.2.28050"
     ]
   },
   "packageFolders": {
@@ -176,9 +167,9 @@
             "target": "Package",
             "version": "[4.0.1, )"
           },
-          "WebSocketSharp-netstandard": {
+          "websocket-sharp-customheaders": {
             "target": "Package",
-            "version": "[1.0.1, )"
+            "version": "[1.0.2.28050, )"
           }
         },
         "imports": [
@@ -200,5 +191,17 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'websocket-sharp-customheaders 1.0.2.28050' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "websocket-sharp-customheaders",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
