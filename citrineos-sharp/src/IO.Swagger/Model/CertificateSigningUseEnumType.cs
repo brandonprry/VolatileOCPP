@@ -11,8 +11,8 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
-using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
-namespace IO.Swagger.Model
+using SwaggerDateConverter = ocpp.citrineos.Client.SwaggerDateConverter;
+namespace ocpp.citrineos.Model
 {
 
     public  enum CertificateSigningUseEnumType 

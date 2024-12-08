@@ -16,7 +16,7 @@ using System.Linq;
 using System.Text;
 using RestSharp;
 
-namespace IO.Swagger.Client
+namespace ocpp.citrineos.Client
 {
     /// <summary>
     /// Represents a set of configuration settings

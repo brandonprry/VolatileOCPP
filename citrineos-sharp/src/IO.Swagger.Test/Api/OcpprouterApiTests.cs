@@ -16,8 +16,8 @@ using System.Reflection;
 using RestSharp;
 using NUnit.Framework;
 
-using IO.Swagger.Client;
-using IO.Swagger.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Api;
 
 namespace IO.Swagger.Test
 {
