@@ -24,6 +24,12 @@ uint8_t* readAllStdin(size_t& length) {
     return data;
 }
 
+/*
+ *
+ * g++ iso15118.cpp -I ./libiso15118/build/_deps/libcbv2g-src/include/ -I libiso15118/include/ libiso15118/build/src/iso15118/libiso15118.a ./libiso15118//build/_deps/libcbv2g-build/lib/cbv2g/libcbv2g_tp.a libiso15118/build/_deps/libcbv2g-build/lib/cbv2g/libcbv2g_iso20.a libiso15118/build/_deps/libcbv2g-build/lib/cbv2g/libcbv2g_exi_codec.a -fprofile-arcs -ftest-coverage -o test
+ *
+ */
+
 int main()
 {
 
