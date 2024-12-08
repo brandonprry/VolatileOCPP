@@ -1,3 +1,6 @@
 [submodule "OCMF-Open-Charge-Metering-Format"]
 	path = OCMF-Open-Charge-Metering-Format
 	url = https://github.com/SAFE-eV/OCMF-Open-Charge-Metering-Format/
+[submodule "libiso15118"]
+	path = libiso15118
+	url = https://github.com/EVerest/libiso15118.git
