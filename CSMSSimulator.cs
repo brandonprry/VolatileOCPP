@@ -13,27 +13,27 @@ public class CSMSSimulator
     this.Start("http://localhost:"+port+"/");
   }
     private int count = 0;
-        public async void Start(string listenerPrefix)
-        {
-            HttpListener listener = new HttpListener();
-            listener.Prefixes.Add(listenerPrefix);
-            listener.Start();
-            Console.WriteLine("Listening...");
-           
-            while (true)
-            {
-                HttpListenerContext listenerContext = await listener.GetContextAsync();
-                if (listenerContext.Request.IsWebSocketRequest)
-                {
-                    ProcessRequest(listenerContext);
-                }
-                else
-                {
-                    listenerContext.Response.StatusCode = 400;
-                    listenerContext.Response.Close();
-                }
-            }
-        }
+      public async void Start(string listenerPrefix)
+      {
+          HttpListener listener = new HttpListener();
+          listener.Prefixes.Add(listenerPrefix);
+          listener.Start();
+          Console.WriteLine("Listening...");
+          
+          while (true)
+          {
+              HttpListenerContext listenerContext = await listener.GetContextAsync();
+              if (listenerContext.Request.IsWebSocketRequest)
+              {
+                  ProcessRequest(listenerContext);
+              }
+              else
+              {
+                  listenerContext.Response.StatusCode = 400;
+                  listenerContext.Response.Close();
+              }
+          }
+      }
 
              
         private async void ProcessRequest(HttpListenerContext listenerContext)
@@ -52,7 +52,7 @@ public class CSMSSimulator
                 Console.WriteLine("Exception: {0}", e);
                 return;
             }
-                                
+
             WebSocket webSocket = webSocketContext.WebSocket;                                           
 
             try
@@ -61,14 +61,12 @@ public class CSMSSimulator
 
                 while (webSocket.State == WebSocketState.Open)
                 {
-            
                     WebSocketReceiveResult receiveResult = await webSocket.ReceiveAsync(new ArraySegment<byte>(receiveBuffer), CancellationToken.None);
 
                     if (receiveResult.MessageType == WebSocketMessageType.Text)
                     {                    
                         string buf = Encoding.ASCII.GetString(receiveBuffer);
                         buf = buf.Replace('\0', ' ').Trim();
-                        
                     }
                 }
             }
