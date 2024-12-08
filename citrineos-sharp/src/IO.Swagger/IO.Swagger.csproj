@@ -8,6 +8,12 @@ OpenAPI spec version: 1.4.3
 
 -->
 <Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>  
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute> 
+  </PropertyGroup>
+
   <PropertyGroup>
     <TargetFramework>net471</TargetFramework>
     <AssemblyName>IO.Swagger</AssemblyName>

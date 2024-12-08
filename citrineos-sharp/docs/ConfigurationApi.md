@@ -1,4 +1,4 @@
-# IO.Swagger.Api.ConfigurationApi
+# ocpp.citrineos.Api.ConfigurationApi
 
 All URIs are relative to */*
 
@@ -27,9 +27,9 @@ Method | HTTP request | Description
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -79,9 +79,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -131,9 +131,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -193,9 +193,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -255,9 +255,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -317,9 +317,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -379,9 +379,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -441,9 +441,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -503,9 +503,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -565,9 +565,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -627,9 +627,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
@@ -689,9 +689,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
