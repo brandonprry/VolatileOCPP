@@ -9,10 +9,18 @@
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>   
   </PropertyGroup>
 
+  <PropertyGroup>
+    <DefaultItemExcludes>$(DefaultItemExcludes);citrineos-sharp\**;maeve-sharp\**</DefaultItemExcludes>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
+    <PackageReference Include="NUnit" Version="2.5.7.10213" />
     <PackageReference Include="websocket-sharp-customheaders" Version="1.0.2.28050" />
+    <PackageReference Include="RestSharp" Version="111.4.1" />
+    <PackageReference Include="JsonSubTypes" Version="1.2.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 
 </Project>
