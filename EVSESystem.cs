@@ -41,7 +41,8 @@ public abstract class EVSESystem
     public EVSESystem(string url, string protocol, string username = null, string password = null)
     {
         WebSocket ws = new WebSocket(url, protocol);
-
+        
+        
         if (!url.StartsWith("wss://"))
         {
             Console.WriteLine("WARNING: Insecure plaintext communication");
@@ -50,6 +51,8 @@ public abstract class EVSESystem
         {
             ws.SslConfiguration.EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12;
         }
+        ws.CustomHeaders = new Dictionary<string,string>();
+        ws.CustomHeaders.Append(new KeyValuePair<string, string>("Sec-WebSocket-Protocol", protocol));
 
         _url = url;
         _protocol = protocol;
@@ -63,7 +66,7 @@ public abstract class EVSESystem
             Console.WriteLine("WARNING: No Basic Authentication in use");
         }
 
-       ws.SetProxy("http://127.0.0.1:8080", null, null);
+        ws.SetProxy("http://127.0.0.1:8080", null, null);
 
         ws.OnError += (sender, e) =>
         {
@@ -252,6 +255,7 @@ public abstract class EVSESystem
     public void SendMeterValues(int connectorId = 0, string transactionId = "1", string timestamp = "2024-10-27T19:10:11Z", string value = "42", string context = "Sample.Periodic", string measurand = "Energy.Active.Import.Register", string unit = "kWh")
     {
         Socket.OnMessage += GetSendMeterValuesResult;
+        
         Socket.Send("    [2, \"" + Guid.NewGuid().ToString() + "\", \"MeterValues\", {\"connectorId\":" + connectorId + ", \"transactionId\": \"" + transactionId + "\", \"meterValue\": [{\"timestamp\": \"" + timestamp + "\", \"sampledValue\": [{\"value\": \"" + value + "\", \"context\": \"" + context + "\", \"format\": \"Raw\", \"measurand\": \"" + measurand + "\", \"phase\": \"L1\", \"location\":\"Outlet\", \"unit\": \"" + unit + "\"}]}]}],");
         Thread.Sleep(1000);
         Socket.OnMessage -= GetSendMeterValuesResult;

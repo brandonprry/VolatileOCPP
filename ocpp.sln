@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ocpp", "ocpp.csproj", "{257F58CC-06A9-4A95-BA64-942726C2538A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "citrineos-sharp", "citrineos-sharp\citrineos-sharp.csproj", "{FEC65D8F-FD85-40E4-9D10-2A3AB075FA29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{257F58CC-06A9-4A95-BA64-942726C2538A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{257F58CC-06A9-4A95-BA64-942726C2538A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{257F58CC-06A9-4A95-BA64-942726C2538A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC65D8F-FD85-40E4-9D10-2A3AB075FA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC65D8F-FD85-40E4-9D10-2A3AB075FA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC65D8F-FD85-40E4-9D10-2A3AB075FA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC65D8F-FD85-40E4-9D10-2A3AB075FA29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

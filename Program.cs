@@ -9,8 +9,15 @@ public class Program
     {
         ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
         
-        string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
-        string protocol = "ocpp1.6";
+        string url = "ws://localhost:8081/";
+        string protocol = "ocpp2.0.1";
+
+        CentralSystem s = new CentralSystem(9090, false);
+        
+        while (true)
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+        }
 
        /* List<Task> tasks = new List<Task>();
         for (int i = 1; i< 11; i++)
@@ -24,9 +31,9 @@ public class Program
         foreach (Task t in tasks)
             t.Wait();*/
 
-        CentralSystem s = new CentralSystem(url, protocol);
+        //CentralSystem s = new CentralSystem(url, protocol);
 
-        s.RunScenarios();
+        //s.RunScenarios();
 
         Console.WriteLine("Done.");
     }

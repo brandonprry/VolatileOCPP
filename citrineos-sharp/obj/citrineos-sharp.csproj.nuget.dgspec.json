@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bperry/projects/ocpp/ocpp.csproj": {}
+    "/Users/bperry/projects/ocpp/citrineos-sharp/citrineos-sharp.csproj": {}
   },
   "projects": {
-    "/Users/bperry/projects/ocpp/ocpp.csproj": {
+    "/Users/bperry/projects/ocpp/citrineos-sharp/citrineos-sharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bperry/projects/ocpp/ocpp.csproj",
-        "projectName": "ocpp",
-        "projectPath": "/Users/bperry/projects/ocpp/ocpp.csproj",
+        "projectUniqueName": "/Users/bperry/projects/ocpp/citrineos-sharp/citrineos-sharp.csproj",
+        "projectName": "citrineos-sharp",
+        "projectPath": "/Users/bperry/projects/ocpp/citrineos-sharp/citrineos-sharp.csproj",
         "packagesPath": "/Users/bperry/.nuget/packages/",
-        "outputPath": "/Users/bperry/projects/ocpp/obj/",
+        "outputPath": "/Users/bperry/projects/ocpp/citrineos-sharp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/bperry/.nuget/NuGet/NuGet.Config"
@@ -42,20 +42,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.3, )"
-            },
-            "Newtonsoft.Json.Schema": {
-              "target": "Package",
-              "version": "[4.0.1, )"
-            },
-            "websocket-sharp-customheaders": {
-              "target": "Package",
-              "version": "[1.0.2.28050, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
