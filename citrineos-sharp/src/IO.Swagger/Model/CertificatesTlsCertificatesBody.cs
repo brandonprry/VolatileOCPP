@@ -35,7 +35,7 @@ namespace IO.Swagger.Model
         /// <param name="privateKey">privateKey (required).</param>
         /// <param name="rootCA">rootCA.</param>
         /// <param name="subCAKey">subCAKey.</param>
-        public CertificatesTlsCertificatesBody(List certificateChain = default(List), string privateKey = default(string), string rootCA = default(string), string subCAKey = default(string))
+        public CertificatesTlsCertificatesBody(IList certificateChain = default(IList), string privateKey = default(string), string rootCA = default(string), string subCAKey = default(string))
         {
             // to ensure "certificateChain" is required (not null)
             if (certificateChain == null)
@@ -63,7 +63,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets CertificateChain
         /// </summary>
         [DataMember(Name="certificateChain", EmitDefaultValue=false)]
-        public List CertificateChain { get; set; }
+        public IList CertificateChain { get; set; }
 
         /// <summary>
         /// Gets or Sets PrivateKey
