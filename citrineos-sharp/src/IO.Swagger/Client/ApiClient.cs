@@ -20,7 +20,7 @@ using System.Text;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace IO.Swagger.Client
+namespace ocpp.citrineos.Client
 {
     /// <summary>
     /// API client is mainly responsible for making the HTTP call to the API backend.
@@ -51,7 +51,7 @@ namespace IO.Swagger.Client
         /// </summary>
         public ApiClient()
         {
-            Configuration = IO.Swagger.Client.Configuration.Default;
+            Configuration = ocpp.citrineos.Client.Configuration.Default;
             RestClient = new RestClient("/");
         }
 
@@ -62,7 +62,7 @@ namespace IO.Swagger.Client
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
         {
-            Configuration = config ?? IO.Swagger.Client.Configuration.Default;
+            Configuration = config ?? ocpp.citrineos.Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
         }

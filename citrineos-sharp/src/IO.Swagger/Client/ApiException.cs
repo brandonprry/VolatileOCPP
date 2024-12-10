@@ -9,7 +9,7 @@
  */
 using System;
 
-namespace IO.Swagger.Client
+namespace ocpp.citrineos.Client
 {
     /// <summary>
     /// API Exception

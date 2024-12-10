@@ -12,10 +12,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
-namespace IO.Swagger.Api
+namespace ocpp.citrineos.Api
 {
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
@@ -29,7 +29,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
         void DataSmartchargingSystemConfigGet ();
 
@@ -39,7 +39,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DataSmartchargingSystemConfigGetWithHttpInfo ();
         /// <summary>
@@ -48,7 +48,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
         void DataSmartchargingSystemConfigPut ();
 
@@ -58,7 +58,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DataSmartchargingSystemConfigPutWithHttpInfo ();
         /// <summary>
@@ -67,7 +67,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
         /// <param name="body"> (optional)</param>
@@ -81,7 +81,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
         /// <param name="body"> (optional)</param>
@@ -94,7 +94,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -108,7 +108,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -121,7 +121,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -135,7 +135,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -148,7 +148,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -162,7 +162,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -175,7 +175,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -189,7 +189,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -204,7 +204,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DataSmartchargingSystemConfigGetAsync ();
 
@@ -214,7 +214,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DataSmartchargingSystemConfigGetAsyncWithHttpInfo ();
         /// <summary>
@@ -223,7 +223,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DataSmartchargingSystemConfigPutAsync ();
 
@@ -233,7 +233,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DataSmartchargingSystemConfigPutAsyncWithHttpInfo ();
         /// <summary>
@@ -242,7 +242,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
         /// <param name="body"> (optional)</param>
@@ -256,7 +256,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
         /// <param name="body"> (optional)</param>
@@ -269,7 +269,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -283,7 +283,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -296,7 +296,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -310,7 +310,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -323,7 +323,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -337,7 +337,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -350,7 +350,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -364,7 +364,7 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -379,7 +379,7 @@ namespace IO.Swagger.Api
     /// </summary>
         public partial class SmartchargingApi : ISmartchargingApi
     {
-        private IO.Swagger.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private ocpp.citrineos.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SmartchargingApi"/> class.
@@ -387,9 +387,9 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public SmartchargingApi(String basePath)
         {
-            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
+            this.Configuration = new ocpp.citrineos.Client.Configuration { BasePath = basePath };
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = ocpp.citrineos.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -398,9 +398,9 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public SmartchargingApi()
         {
-            this.Configuration = IO.Swagger.Client.Configuration.Default;
+            this.Configuration = ocpp.citrineos.Client.Configuration.Default;
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = ocpp.citrineos.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -409,14 +409,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public SmartchargingApi(IO.Swagger.Client.Configuration configuration = null)
+        public SmartchargingApi(ocpp.citrineos.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = IO.Swagger.Client.Configuration.Default;
+                this.Configuration = ocpp.citrineos.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
-            ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
+            ExceptionFactory = ocpp.citrineos.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -442,12 +442,12 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public IO.Swagger.Client.Configuration Configuration {get; set;}
+        public ocpp.citrineos.Client.Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public IO.Swagger.Client.ExceptionFactory ExceptionFactory
+        public ocpp.citrineos.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -485,7 +485,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
         public void DataSmartchargingSystemConfigGet ()
         {
@@ -495,7 +495,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> DataSmartchargingSystemConfigGetWithHttpInfo ()
         {
@@ -542,7 +542,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DataSmartchargingSystemConfigGetAsync ()
         {
@@ -553,7 +553,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> DataSmartchargingSystemConfigGetAsyncWithHttpInfo ()
         {
@@ -600,7 +600,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
         public void DataSmartchargingSystemConfigPut ()
         {
@@ -610,7 +610,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> DataSmartchargingSystemConfigPutWithHttpInfo ()
         {
@@ -657,7 +657,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DataSmartchargingSystemConfigPutAsync ()
         {
@@ -668,7 +668,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> DataSmartchargingSystemConfigPutAsyncWithHttpInfo ()
         {
@@ -715,7 +715,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
         /// <param name="body"> (optional)</param>
@@ -729,7 +729,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
         /// <param name="body"> (optional)</param>
@@ -798,7 +798,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
         /// <param name="body"> (optional)</param>
@@ -813,7 +813,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
         /// <param name="body"> (optional)</param>
@@ -882,7 +882,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -896,7 +896,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -968,7 +968,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -983,7 +983,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1055,7 +1055,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1069,7 +1069,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1141,7 +1141,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1156,7 +1156,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1228,7 +1228,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1242,7 +1242,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1314,7 +1314,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1329,7 +1329,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1401,7 +1401,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1415,7 +1415,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1487,7 +1487,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>
@@ -1502,7 +1502,7 @@ namespace IO.Swagger.Api
         /// <summary>
         ///  
         /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="ocpp.citrineos.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="body"></param>
         /// <param name="identifier"></param>
         /// <param name="tenantId"></param>

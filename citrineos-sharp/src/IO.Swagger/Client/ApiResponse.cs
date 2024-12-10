@@ -10,7 +10,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace IO.Swagger.Client
+namespace ocpp.citrineos.Client
 {
     /// <summary>
     /// API Response
