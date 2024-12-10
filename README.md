@@ -2,6 +2,8 @@
 
 Test cases are currently built against the StEVe OCPP Server implementation.
 
+If you need help verifying your OCPP implementation, email bperry@atx.services to see how we can help.
+
 https://github.com/steve-community/steve
 
 ```
