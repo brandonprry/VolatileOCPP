@@ -82,6 +82,5 @@ public class TC_001_CSMS : IScenario
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
         return RunScenario(ws);
-
     }
 }

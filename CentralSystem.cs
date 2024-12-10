@@ -76,7 +76,7 @@ public class CentralSystem : System
 
             Console.WriteLine("Running scenario: " + s.GetType().ToString());
 
-            var task = Task.Run(() => s.RunScenario(URL, Protocol));
+            var task = Task.Run(() => s.RunScenario(this.Socket));
             if (task.Wait(TimeSpan.FromSeconds(120)))
             {
                 if (task.Result)
