@@ -24,6 +24,22 @@
           }
         }
       },
+      "Newtonsoft.Json.Schema/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.1/Newtonsoft.Json.Schema.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Newtonsoft.Json.Schema.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "WebSocketSharp-netstandard/1.0.1": {
         "type": "package",
         "compile": {
@@ -82,6 +98,30 @@
         "packageIcon.png"
       ]
     },
+    "Newtonsoft.Json.Schema/4.0.1": {
+      "sha512": "rbHUKp5WTIbqmLEeJ21nTTDGcfR0LA7bVMzm0bYc3yx6NFKiCIHzzvYbwA4Sqgs7+wNldc5nBlkbithWj8IZig==",
+      "type": "package",
+      "path": "newtonsoft.json.schema/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net35/Newtonsoft.Json.Schema.dll",
+        "lib/net35/Newtonsoft.Json.Schema.xml",
+        "lib/net40/Newtonsoft.Json.Schema.dll",
+        "lib/net40/Newtonsoft.Json.Schema.xml",
+        "lib/net45/Newtonsoft.Json.Schema.dll",
+        "lib/net45/Newtonsoft.Json.Schema.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.Schema.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.Schema.xml",
+        "lib/netstandard2.1/Newtonsoft.Json.Schema.dll",
+        "lib/netstandard2.1/Newtonsoft.Json.Schema.xml",
+        "newtonsoft.json.schema.4.0.1.nupkg.sha512",
+        "newtonsoft.json.schema.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "WebSocketSharp-netstandard/1.0.1": {
       "sha512": "knoinAv31vbdxXdypnzN2MPX5hyntVLWceq6OdWRXkr9zzqp/RWbxSuLFGbkW8De1061URgNAN43BUTlgMx1CA==",
       "type": "package",
@@ -104,6 +144,7 @@
     "net8.0": [
       "Json.Net >= 1.0.33",
       "Newtonsoft.Json >= 13.0.3",
+      "Newtonsoft.Json.Schema >= 4.0.1",
       "WebSocketSharp-netstandard >= 1.0.1"
     ]
   },
@@ -156,6 +197,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "Newtonsoft.Json.Schema": {
+            "target": "Package",
+            "version": "[4.0.1, )"
           },
           "WebSocketSharp-netstandard": {
             "target": "Package",
