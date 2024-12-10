@@ -7,6 +7,10 @@ namespace ocpp;
 
 public static class Utility
 {
+
+    public static string ProjectDirectory { get {
+        return Environment.CurrentDirectory;
+    }}
     public static string[] Methods
     {
         get

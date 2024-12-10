@@ -123,7 +123,6 @@ public abstract class System
         Socket.OnMessage += (sender, e) =>
         {
             JToken[] ret = JArray.Parse(e.Data).ToArray<JToken>();
-
             string? tmp = string.Empty;
             JObject? obj;
 
