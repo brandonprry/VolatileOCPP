@@ -1,0 +1,3 @@
+[submodule "OCMF-Open-Charge-Metering-Format"]
+	path = OCMF-Open-Charge-Metering-Format
+	url = https://github.com/SAFE-eV/OCMF-Open-Charge-Metering-Format/

@@ -26,30 +26,31 @@ public class Charger : System
 
         SendAuthorize(IDTag, true);
 
-        SendStatusNotification("1", "NoError", "Available");
+        SendStatusNotification(ConnectorID, "NoError", "Available");
 
         int charge = new Random().Next(5, 30);
         SendStartTransaction(meterStart: charge.ToString(), connectorId: ConnectorID, idTag: IDTag, timestamp: DateTime.UtcNow.ToString("s") + "Z");
+        SendMeterValues(connectorId: ConnectorID, transactionId: CurrentTransactionID, timestamp: DateTime.UtcNow.ToString("s") + "Z",value: charge.ToString());
 
-        SendStatusNotification("1", "NoError", "Preparing");
+        SendStatusNotification(ConnectorID, "NoError", "Preparing");
 
-        SendStatusNotification("1", "NoError", "Charging");
+        SendStatusNotification(ConnectorID, "NoError", "Charging");
 
         int max = new Random().Next(50, 100);
         while (charge < max)
         {
-
             Console.WriteLine("Charger " + IDTag + " connector " + ConnectorID + " is charging at " + charge + "%");
             SendMeterValues(connectorId: ConnectorID, transactionId: CurrentTransactionID, timestamp: DateTime.UtcNow.ToString("s") + "Z",value: charge.ToString());
             charge += 1;
             Thread.Sleep(1000);
         }
 
-        SendStatusNotification("1", "NoError", "Finishing");
+        SendStatusNotification(ConnectorID, "NoError", "Finishing");
+        SendMeterValues(connectorId: ConnectorID, transactionId: CurrentTransactionID, timestamp: DateTime.UtcNow.ToString("s") + "Z",value: charge.ToString());
 
-        SendStopTransaction(CurrentTransactionID, meterStop: "99", idTag: IDTag, timestamp: DateTime.UtcNow.ToString("s") + "Z");
+        SendStopTransaction(CurrentTransactionID, meterStop: charge.ToString(), idTag: IDTag, timestamp: DateTime.UtcNow.ToString("s") + "Z");
 
-        SendStatusNotification("1", "NoError", "Available");
+        SendStatusNotification(ConnectorID, "NoError", "Available");
     }
 
     public IScenario[] GetScenarios()
