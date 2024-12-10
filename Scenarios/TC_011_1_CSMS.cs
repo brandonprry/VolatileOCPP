@@ -20,6 +20,7 @@ public class TC_011_1_CSMS : IScenario
         ws.Connect();
 
         int i = 1;
+        bool passed = false;
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);

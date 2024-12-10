@@ -18,6 +18,9 @@ public class CentralSystem : System
             new TC_007_CSMS(),
             new TC_010_CSMS(),
             new TC_023_1_CSMS(),
+            new TC_023_2_CSMS(),
+            new TC_023_3_CSMS(),
+            new TC_024_CSMS(),
             new TC_064_CSMS(),
         ];
     }
@@ -38,12 +41,15 @@ public class CentralSystem : System
                 Console.WriteLine("Skipping incompatible test " + s.GetType().ToString());
                 continue;
             }
-            else
-            {
-                Console.WriteLine("Running scenario: " + s.GetType().ToString());
+                
+            Console.Write("Running scenario: " + s.GetType().ToString());
+            
+             if (s.RunScenario(URL, Protocol)){
+               Console.WriteLine("\t-- PASSED!");
             }
-    
-            s.RunScenario(URL, Protocol);
+            else {
+                Console.WriteLine("\t-- FAILED!");
+            }
         }
     }
 
