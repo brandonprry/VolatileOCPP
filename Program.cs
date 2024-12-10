@@ -21,9 +21,9 @@ public class Program
         foreach (Task t in tasks)
             t.Wait();
 
-        //CentralSystem s = new CentralSystem(url, protocol);
+        CentralSystem s = new CentralSystem(url, protocol);
 
-        //s.RunScenarios();
+        s.RunScenarios();
 
         Console.WriteLine("Done.");
     }
