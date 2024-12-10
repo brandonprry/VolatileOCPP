@@ -86,7 +86,7 @@ public abstract class System
                 {
                     JToken[] ret = JArray.Parse(e.Data).ToArray<JToken>();
                     
-                    string tmp ;
+                    string? tmp = string.Empty;
                     JObject? obj;
 
                     if (ret[2].Type == JTokenType.String)
@@ -103,18 +103,20 @@ public abstract class System
                             else
                             {
                                 if (tmp == "InternalError")
+                                {
                                     more.Add(method);
-Console.WriteLine("huh");
-
+                                    Console.WriteLine("Supports method: " + method);
+                                }
                             }
                     }
                     else
                     {
                         obj = ret[2] as JObject;
                         more.Add(method);
+                        Console.WriteLine("Supports method: " + method);
                     }
 
-                    Console.WriteLine("Laputa says: " + method);
+                    //Console.WriteLine("Laputa says: " + method);
                 };
 
                 ws.Connect();

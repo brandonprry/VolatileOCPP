@@ -1,7 +1,7 @@
 #!/usr/bin/env python2
 
 messages = [
-    [2,"852a4cb2-0e20-46f8-bc29-c5ab3cb182c7","BootNotification",{"chargePointVendor":"Radboud","chargePointModel":"Fuzzer"}],
+    [2,"852a4cb2-0e20-46f8-bc29-c5ab3cb182c7","BootNotification",{"chargePointVendor":"volatileocpp","chargePointModel":"Fuzzer", "imsi":"test", "chargePointSerialNumber":"test", "chargeBoxSerialNumber":"test", "firmwareVersion":"test","iccid":"test", "meterType":"test", "meterSerialNumber":"test"}],
     [2,"9b25cbb0-c016-41e7-baa0-e796a9565c11","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available"}],
     [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2c8b", "Heartbeat", {}],
     [2,"8d59bc8c-9884-4d64-82b5-3819d0c58b8a","Authorize",{"idTag":"volatileocpp"}],

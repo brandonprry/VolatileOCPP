@@ -7,7 +7,7 @@ namespace ocpp.Scenarios;
 public class TC_004_1_CSMS
 : IScenario
 {
-        public string[] Dependencies { get { return ["StartTransaction", "StatusNotification"];}}
+    public string[] Dependencies { get { return ["StartTransaction", "StatusNotification"];}}
 
     public bool DependsOn(string method)
     {
@@ -31,7 +31,6 @@ public class TC_004_1_CSMS
            if (i == 1)
            {
                i++;
-
            }
            else if (i == 2)
            {
@@ -45,7 +44,6 @@ public class TC_004_1_CSMS
                    Console.WriteLine("Expected Accepted response, got " + j["idTagInfo"]["status"].Value<string>());
                    throw new Exception("Invalid response");
                }
-
            }
            else if (i == 3)
            {
@@ -61,8 +59,6 @@ public class TC_004_1_CSMS
 
         ws.Send("  [2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Charging\"}]");
         Thread.Sleep(1000);
-
-
 
         return false;
     }
