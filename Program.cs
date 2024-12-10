@@ -8,18 +8,41 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        using (var ws = new WebSocket("ws://localhost:8180/steve/websocket/CentralSystemService/1", "ocpp1.6"))
+        string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
+        string protocol = "ocpp1.6";
+
+        using (var ws = new WebSocket(url, protocol))
         {
+            ws.WaitTime = new TimeSpan(0, 0, 60);
+
+            ws.OnError += (sender, e) =>
+            {
+                Console.WriteLine("Error");
+                return;
+            };
+
             ws.OnMessage += (sender, e) =>
-                            Console.WriteLine("Laputa says: " + e.Data);
+            {
+                Console.WriteLine("Laputa says: " + e.Data);
+            };
 
             ws.Connect();
             Guid uuid = Guid.NewGuid();
-            ws.Send("[2, \"" + uuid.ToString() + "\", \"Heartbeat\", {}]");
-            Thread.Sleep(5);
+
+            try
+            {
+                ws.Send("[2, \"" + uuid.ToString() + "\", \"Heartbeat\", {}]");
+            }
+            catch
+            {
+                Console.WriteLine("Error");
+                return;
+            }
+
         }
 
-        string[] rpcMethods = ["Authorize",
+        string[] rpcMethods = [
+"Authorize",
 "BootNotification",
 "CancelReservation",
 "CertificateSigned",
@@ -82,31 +105,32 @@ public class Program
 "TriggerMessage",
 "UnlockConnector",
 "UnpublishFirmware",
-"UpdateFirmware"];
+"UpdateFirmware"
+];
 
         string[] validResponses = [
-                    "NotImplemented",
-            "NotSupported",
-            "InternalError",
-            "ProtocolError",
-            "SecurityError",
-            "FormationViolation",
-            "PropertyConstraintViolation",
-            "OccurenceConstraintViolation",
-            "TypeConstraintViolation",
-            "GenericError"
-                ];
+"NotImplemented",
+"NotSupported",
+"InternalError",
+"ProtocolError",
+"SecurityError",
+"FormationViolation",
+"PropertyConstraintViolation",
+"OccurenceConstraintViolation",
+"TypeConstraintViolation",
+"GenericError"
+];
 
-
-        Dictionary<string,string> impl = new Dictionary<string, string>();
+        Dictionary<string, string> impl = new Dictionary<string, string>();
+        List<string> more = new List<string>();
         foreach (string method in rpcMethods)
         {
-            using (var ws = new WebSocket("ws://localhost:8180/steve/websocket/CentralSystemService/1", "ocpp1.6"))
+            using (var ws = new WebSocket(url, protocol))
             {
                 ws.OnMessage += (sender, e) =>
                 {
                     JToken[] ret = JArray.Parse(e.Data).ToArray<JToken>();
-                    string? tmp;
+                    string tmp;
                     JObject? obj;
 
                     try
@@ -115,12 +139,13 @@ public class Program
 
                         if (!validResponses.Contains(tmp))
                             throw new Exception(tmp);
-                            
+
                         impl[method] = tmp;
                     }
                     catch
                     {
                         obj = ret[2] as JObject;
+                        more.Add(method);
                     }
 
                     Console.WriteLine("Laputa says: " + method);
@@ -129,11 +154,10 @@ public class Program
                 ws.Connect();
                 Guid uuid = Guid.NewGuid();
                 ws.Send("[2, \"" + uuid.ToString() + "\", \"" + method + "\", {}]");
-                Thread.Sleep(5);
+                Thread.Sleep(1000);
             }
         }
 
-        Thread.Sleep(500);
-
+        Console.WriteLine("Done.");
     }
 }
