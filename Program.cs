@@ -14,7 +14,8 @@ public class Program
         string protocol = "ocpp1.6";
 
         CentralSystem s = new CentralSystem(url, protocol);
-        s.GetMethods();
+
+        //s.GetMethods();
         s.RunScenarios();
 
         Console.WriteLine("Done.");
