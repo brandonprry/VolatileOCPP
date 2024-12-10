@@ -2,7 +2,18 @@
 
 https://ocpp.us
 
-Scenarios can be run against the SteVe OCPP Server implementation as a testbed. Scenario implementations are built based directly on the CompliancyTestTool PDF included within the repository. Not every scenario is implemented. Many will be implemented in time. Some will be implemented when software/hardware that implements it gets tested.
+## Running CSMS scenarios
+
+```
+        string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
+        string protocol = "ocpp1.6";
+        CentralSystem s = new CentralSystem(url, protocol);
+        s.RunScenarios();
+```
+
+Scenarios can be run against the SteVe OCPP Server implementation as a testbed. Create a ChargeBox ID and OCCP TD tag "volatileocpp".
+
+Scenario implementations are built based directly on the CompliancyTestTool PDF included within the repository. Not every scenario is implemented. Many will be implemented in time. Some will be implemented when software/hardware that implements it gets tested.
 
 https://github.com/steve-community/steve
 
