@@ -39,9 +39,9 @@ dotnet build
 
 Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
 ```csharp
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 ```
 
 <a name="packaging"></a>
@@ -64,9 +64,9 @@ Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-p
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.citrineos.Api;
+using ocpp.citrineos.Client;
+using ocpp.citrineos.Model;
 
 namespace Example
 {
