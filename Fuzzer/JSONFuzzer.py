@@ -2,6 +2,7 @@
 
 import websocket
 import json
+import uuid
 import time
 import os
 import threading
@@ -93,6 +94,7 @@ def test():
 
     if wf and testf:
         for m in messages:
+            m[1] = str(uuid.uuid4())
             print "\n\nNew message:"
             wf.write("----------------- New message -----------------\n")
             testf.write("----------------- New message -----------------\n")
