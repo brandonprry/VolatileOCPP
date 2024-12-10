@@ -18,6 +18,7 @@ public class TC_005_1_CSMS : IScenario
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
 
+        Charger charger = new Charger(ws);
         int i = 1;
         int transid = 0;
         bool passed = false;
@@ -28,6 +29,7 @@ public class TC_005_1_CSMS : IScenario
 
            if (j == null)
                return;
+
            if (i == 1)
            {
                i++;
@@ -76,7 +78,6 @@ public class TC_005_1_CSMS : IScenario
            }
            else if (i == 7)
            {
-               i++;
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
 
@@ -84,25 +85,25 @@ public class TC_005_1_CSMS : IScenario
            }
        };
 
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Preparing\"}]");
+        charger.SendStatusNotification(status: "Preparing");
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"dddb2599-d678-4ff8-bf38-a230390a1200\",\"StartTransaction\",{\"connectorId\":1,\"idTag\":\"volatileocpp\",\"meterStart\":42,\"timestamp\":\"2024-10-27T19:10:11Z\"}]");
+        charger.SendStartTransaction();
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Charging\"}]");
+        charger.SendStatusNotification(status: "Charging");
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"SuspendedEV\"}]");
+        charger.SendStatusNotification(status: "SuspendedEV");
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"dddb2599-d678-4ff8-bf38-a230390a1200\",\"StopTransaction\",{\"transactionId\":\"" + transid + "\",\"idTag\":\"volatileocpp\",\"meterStart\":42,\"timestamp\":\"2024-10-27T19:10:11Z\"}]");
+        charger.SendStopTransaction(transid.ToString());
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Finishing\"}]");
+        charger.SendStatusNotification(status: "Finishing");
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Available\"}]");
+        charger.SendStatusNotification();
         Thread.Sleep(1000);
 
         return passed;

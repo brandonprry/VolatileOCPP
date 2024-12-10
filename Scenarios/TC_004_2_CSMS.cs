@@ -19,6 +19,7 @@ public class TC_004_2_CSMS
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
 
+        Charger charger = new Charger(ws);
         int i = 1;
         bool timedOut = false;
         bool passed = false;
@@ -57,17 +58,15 @@ public class TC_004_2_CSMS
                }
        };
 
-
-        ws.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"volatileocpp\"}]");
+        charger.SendAuthorize();
         Thread.Sleep(1000);
 
-        
-        ws.Send("  [2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Preparing\"}]");
+        charger.SendStatusNotification(status: "Preparing");
         Thread.Sleep(1000);
 
         Thread.Sleep(1000*60); //timeout?
 
-        ws.Send("  [2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Available\"}]");
+        charger.SendStatusNotification();
         Thread.Sleep(1000);
 
         return passed;

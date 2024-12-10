@@ -1,16 +1,22 @@
 using System;
+using WebSocketSharp.Server;
 using ocpp.Scenarios;
 
 namespace ocpp;
 
 public class CentralSystem : System
 {
+    WebSocketServer? server = null;
+    public CentralSystem(int port) : base()
+    {
+        server = new WebSocketServer(port);
+        server.AddWebSocketService<CSMSSimulator>("/ocpp_csms_simulator");
+        server.Start();
+    }
+
     public CentralSystem(string url, string protocol)
     : base(url, protocol)
-    {
-        if (!url.StartsWith("wss://"))
-            Console.WriteLine("WARNING: Insecure plaintext communication");
-        
+    {   
         Scenarios =
         [
             new TC_001_CSMS(),
@@ -48,14 +54,14 @@ public class CentralSystem : System
                     bad = true;
                 }
             }
-            
+
             if (bad)
             {
                 Console.WriteLine("Skipping incompatible test " + s.GetType().ToString());
                 continue;
             }
 
-            Console.Write("Running scenario: " + s.GetType().ToString());
+            Console.WriteLine("Running scenario: " + s.GetType().ToString());
 
             if (s.RunScenario(URL, Protocol))
             {

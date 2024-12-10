@@ -22,6 +22,7 @@ public class TC_037_3_CSMS : IScenario
         int i = 1;
         int transid = 0;
         bool passed = false;
+        Charger charger = new Charger(ws);
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -66,16 +67,16 @@ public class TC_037_3_CSMS : IScenario
 
        };
 
-        ws.Send("[2,\"dddb2599-d678-4ff8-bf38-a230390a1200\",\"StartTransaction\",{\"connectorId\":1,\"idTag\":\"NotAValidID\",\"meterStart\":42,\"timestamp\":\"2017-10-27T19:10:11Z\"}]");
+        charger.SendStartTransaction(idTag:"NotAValidID");
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Charging\"}]");
+        charger.SendStatusNotification(status: "Charging");
         Thread.Sleep(1000);
 
-        ws.Send("[2,\"29e7a835-6ff6-4cf8-90e6-5d51182f8fdb\",\"StopTransaction\",{\"idTag\":\"volatileocpp\", \"reason\":\"DeAuthorized\", \"meterStop\":\"41\",\"timestamp\":\"2017-10-27T19:10:11Z\",\"transactionId\":\"" + transid + "\"}]");
+        charger.SendStopTransaction(transid: "-1", reason:"DeAuthorized", idTag: "NotAValidID");
         Thread.Sleep(1000);       
 
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Finishing\"}]");
+        charger.SendStatusNotification(status: "Finishing");
         Thread.Sleep(1000);
 
         return passed;

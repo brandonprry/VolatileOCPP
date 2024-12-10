@@ -20,6 +20,7 @@ public class TC_024_CSMS : IScenario
 
         int i = 1;
         bool passed = false;
+        Charger charger = new Charger(ws);
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -43,10 +44,10 @@ public class TC_024_CSMS : IScenario
            }
        };
     
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Preparing\"}]");
+        charger.SendStatusNotification(status: "Preparing");
         Thread.Sleep(1000);
         
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"ConnectorLockFailure\",\"status\":\"Faulted\"}]");
+        charger.SendStatusNotification(errorCode: "ConnectorLockFault", status: "Faulted");
         Thread.Sleep(1000);
         
         return passed;

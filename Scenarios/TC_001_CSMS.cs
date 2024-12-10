@@ -17,9 +17,11 @@ public class TC_001_CSMS : IScenario
     {
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
+        
+        Charger charger = new Charger(ws);
 
-        int i = 1;
         bool passed = false;
+        bool step1 = false, step2 = false, step3 = false;
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -28,39 +30,50 @@ public class TC_001_CSMS : IScenario
            if (j == null)
                return;
 
-           if (i == 1)
+           if (step1 == false)
            {
-               i++;
+             
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/BootNotificationResponse.json")))
                    throw new Exception("Invalid response");
 
                if (j["status"] == null ||
                    j["status"].Value<string>() != "Accepted")
                    throw new Exception("Invalid response");
+
+                step1 = true;
            }
-           else if (i == 2)
+           else if (step2 == false)
            {
-               i++;
+               
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
+
+                step2 = true;
            }
-           else if (i == 3)
+           else if (step3 == false)
            {
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/HeartbeatResponse.json")))
                    throw new Exception("Invalid response");
 
                 passed = true;
+                step3 = true;
            }
        };
 
-        ws.Send("[2,\"852a4cb2-0e20-46f8-bc29-c5ab3cb182c7\",\"BootNotification\",{\"chargePointVendor\":\"volatileocpp\",\"chargePointModel\":\"Charging System\"}]");
-        Thread.Sleep(1000);
-
-        ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":0,\"errorCode\":\"NoError\",\"status\":\"Available\"}]");
-        Thread.Sleep(1000);
+        charger.SendBootNotification();
         
-        ws.Send("[2, \"a187bcd6-4042-4a82-b6d4-b4c55d2f2c8b\", \"Heartbeat\", {}]");
-        Thread.Sleep(1000);
+        while (step1 == false)
+            Thread.Sleep(1000);
+
+        charger.SendStatusNotification();
+        
+        while (step2 == false)
+            Thread.Sleep(1000);
+        
+        charger.SendHeartbeat();
+        
+        while (step3 == false)
+            Thread.Sleep(1000);
 
         return passed;
     }

@@ -20,6 +20,7 @@ public class TC_023_1_CSMS : IScenario
 
         int i = 1;
         bool passed = false;
+        Charger charger = new Charger(ws);
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -38,9 +39,8 @@ public class TC_023_1_CSMS : IScenario
            passed = true;
        };
 
-        ws.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"NotARealID\"}]");
+        charger.SendAuthorize("NotARealID");
         Thread.Sleep(1000);
-
 
         return passed;
     }
