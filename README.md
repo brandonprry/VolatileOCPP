@@ -13,7 +13,7 @@ s.RunScenarios();
 
 Scenarios can be run against the SteVe OCPP Server implementation as a testbed. Create a ChargeBox ID and OCPP ID tag "volatileocpp".
 
-Scenario implementations are built based directly on the CompliancyTestTool PDF included within the repository. Not every scenario is implemented. Many will be implemented in time. Some will be implemented when software/hardware that implements it gets tested. Security profiles 0, 1, and 2 have been tested. 
+Scenario implementations are built based directly on the CompliancyTestTool PDF included within the repository. Not every scenario is implemented. Many will be implemented in time. Some will be implemented when software/hardware that implements it gets tested. Security profiles 0, 1, and 2 have been tested using MaEVe CSMS. 
 
 https://github.com/steve-community/steve
 
