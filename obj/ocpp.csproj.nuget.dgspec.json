@@ -43,10 +43,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Json.Net": {
-              "target": "Package",
-              "version": "[1.0.33, )"
-            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
