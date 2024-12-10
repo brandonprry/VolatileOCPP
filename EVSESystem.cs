@@ -50,6 +50,8 @@ public abstract class EVSESystem
         if (username != null)
             ws.SetCredentials(username, password, true);
 
+        ws.SetProxy("http://127.0.0.1:8080", null, null);
+
         ws.OnError += (sender, e) =>
         {
             Console.WriteLine("Error");
@@ -98,7 +100,7 @@ public abstract class EVSESystem
     public void SendBootNotification(string chargePointVendor = "volatileocpp Vendor", string chargePointModel = "volatileocpp Model")
     {
         Socket.OnMessage += GetBootNotificationResult;
-        Socket.Send("[2,\"852a4cb2-0e20-46f8-bc29-c5ab3cb182c7\",\"BootNotification\",{\"chargePointVendor\":\"" + chargePointVendor + "\",\"chargePointModel\":\"" + chargePointModel + "\"}]");
+        Socket.Send("[2,\""+Guid.NewGuid().ToString()+"\",\"BootNotification\",{\"chargePointVendor\":\"" + chargePointVendor + "\",\"chargePointModel\":\"" + chargePointModel + "\"}]");
         Thread.Sleep(1000);
         Socket.OnMessage -= GetBootNotificationResult;
     }
@@ -110,10 +112,10 @@ public abstract class EVSESystem
         if (!Utility.ValidateJSON(j, File.ReadAllText(Utility.ProjectDirectory + "/v1.6_schemas/schemas/StatusNotificationResponse.json")))
             throw new Exception("Invalid response");
     }
-    public void SendStatusNotification(string connectorId = "0", string errorCode = "NoError", string status = "Available")
+    public void SendStatusNotification(int connectorId = 0, string errorCode = "NoError", string status = "Available")
     {
         Socket.OnMessage += GetStatusNotificationResult;
-        Socket.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":\"" + connectorId + "\",\"errorCode\":\"" + errorCode + "\",\"status\":\"" + status + "\"}]");
+        Socket.Send("[2,\""+Guid.NewGuid().ToString()+"\",\"StatusNotification\",{\"connectorId\":" + connectorId + ",\"errorCode\":\"" + errorCode + "\",\"status\":\"" + status + "\"}]");
         Thread.Sleep(1000);
         Socket.OnMessage -= GetStatusNotificationResult;
     }
@@ -130,7 +132,7 @@ public abstract class EVSESystem
     public void SendHeartbeat()
     {
         Socket.OnMessage += GetHeartbeatResult;
-        Socket.Send("[2, \"a187bcd6-4042-4a82-b6d4-b4c55d2f2c8b\", \"Heartbeat\", {}]");
+        Socket.Send("[2, \""+Guid.NewGuid().ToString()+"\", \"Heartbeat\", {}]");
         Thread.Sleep(1000);
         Socket.OnMessage -= GetHeartbeatResult;
     }
@@ -154,7 +156,7 @@ public abstract class EVSESystem
         IDTag = idTag;
 
         Socket.OnMessage += GetAuthorizeResult;
-        Socket.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"" + idTag + "\"}]");
+        Socket.Send("[2,\""+Guid.NewGuid().ToString()+"\",\"Authorize\",{\"idTag\":\"" + idTag + "\"}]");
         Thread.Sleep(1000);
 
         if (verify)
@@ -164,7 +166,7 @@ public abstract class EVSESystem
                 Console.WriteLine("ID Tag " + IDTag + " is not authorized. Currenly the credentials are " + CurrentAuthorizationStatus);
                 Thread.Sleep(1000);
 
-                Socket.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"" + idTag + "\"}]");
+                Socket.Send("[2,\""+Guid.NewGuid().ToString()+"\",\"Authorize\",{\"idTag\":\"" + idTag + "\"}]");
             }
         }
 
@@ -188,10 +190,10 @@ public abstract class EVSESystem
         CurrentTransactionID = j["transactionId"].Value<string>();
 
     }
-    public void SendStartTransaction(string connectorId = "1", string idTag = "volatileocpp", string meterStart = "42", string timestamp = "2017-10-27T19:10:11Z")
+    public void SendStartTransaction(int connectorId = 1, string idTag = "volatileocpp", string meterStart = "42", string timestamp = "2017-10-27T19:10:11Z")
     {
         Socket.OnMessage += GetStartTransactionResult;
-        Socket.Send("[2,\"dddb2599-d678-4ff8-bf38-a230390a1200\",\"StartTransaction\",{\"connectorId\":\"" + connectorId + "\",\"idTag\":\"" + idTag + "\",\"meterStart\":\"" + meterStart + "\",\"timestamp\":\"" + timestamp + "\"}]");
+        Socket.Send("[2,\""+Guid.NewGuid().ToString()+"\",\"StartTransaction\",{\"connectorId\":" + connectorId + ",\"idTag\":\"" + idTag + "\",\"meterStart\":\"" + meterStart + "\",\"timestamp\":\"" + timestamp + "\"}]");
         Thread.Sleep(1000);
         Socket.OnMessage -= GetStartTransactionResult;
     }
@@ -210,19 +212,19 @@ public abstract class EVSESystem
     public void SendStopTransaction(string transid, string idTag = "volatileocpp", string meterStop = "42", string timestamp = "2024-10-27T19:10:11Z", string reason = "Other")
     {
         Socket.OnMessage += GetStopTransactionResult;
-        Socket.Send("[2,\"dddb2599-d678-4ff8-bf38-a230390a1200\",\"StopTransaction\",{\"reason\":\"" + reason + "\",\"transactionId\":\"" + transid + "\",\"idTag\":\"" + idTag + "\",\"meterStop\":\"" + meterStop + "\",\"timestamp\":\"" + timestamp + "\"}]");
+        Socket.Send("[2,\""+Guid.NewGuid().ToString()+"\",\"StopTransaction\",{\"reason\":\"" + reason + "\",\"transactionId\":\"" + transid + "\",\"idTag\":\"" + idTag + "\",\"meterStop\":\"" + meterStop + "\",\"timestamp\":\"" + timestamp + "\"}]");
         Thread.Sleep(1000);
         Socket.OnMessage -= GetStopTransactionResult;
     }
 
-    public void SendRemoteStartTransaction(string connectorId = "1", string idTag = "volatileocpp")
+    public void SendRemoteStartTransaction(int connectorId = 0, string idTag = "volatileocpp")
     {
-        Socket.Send("[2, \"a187bcd6-4042-4a82-b6d4-b4c55d2f2caa\", \"RemoteStartTransaction\", {\"connectorId\": \"" + connectorId + "\", \"idTag\": \"" + idTag + "\"}],");
+        Socket.Send("[2, \""+Guid.NewGuid().ToString()+"\", \"RemoteStartTransaction\", {\"connectorId\": " + connectorId + ", \"idTag\": \"" + idTag + "\"}],");
     }
 
     public void SendDataTransfer(string vendorId = "volatileocpp", string messageId = "MessageID", string data = "Data")
     {
-        Socket.Send(" [2, \"29e7a835-6ff6-4cf8-90e6-5d51182f8fde\", \"DataTransfer\", {\"vendorId\": \"" + vendorId + "\", \"messageId\": \"" + messageId + "\", \"data\": \"" + data + "\"}]");
+        Socket.Send(" [2, \""+Guid.NewGuid().ToString()+"\", \"DataTransfer\", {\"vendorId\": \"" + vendorId + "\", \"messageId\": \"" + messageId + "\", \"data\": \"" + data + "\"}]");
     }
 
     public void GetSendMeterValuesResult(object sender, MessageEventArgs e)
@@ -235,10 +237,10 @@ public abstract class EVSESystem
 
 
     }
-    public void SendMeterValues(string connectorId = "0", string transactionId = "1", string timestamp = "2024-10-27T19:10:11Z", string value ="42", string context = "Sample.Periodic", string measurand = "Energy.Active.Import.Register", string unit = "kWh")
+    public void SendMeterValues(int connectorId = 0, string transactionId = "1", string timestamp = "2024-10-27T19:10:11Z", string value ="42", string context = "Sample.Periodic", string measurand = "Energy.Active.Import.Register", string unit = "kWh")
     {
         Socket.OnMessage += GetSendMeterValuesResult;
-        Socket.Send("    [2, \"a187bcd6-4042-4a82-b6d4-b4c55d2f2bef\", \"MeterValues\", {\"connectorId\":\""+connectorId+"\", \"transactionId\": \""+transactionId+"\", \"meterValue\": [{\"timestamp\": \""+timestamp+"\", \"sampledValue\": [{\"value\": \""+value+"\", \"context\": \""+context+"\", \"format\": \"Raw\", \"measurand\": \""+measurand+"\", \"phase\": \"L1\", \"location\":\"Outlet\", \"unit\": \""+unit+"\"}]}]}],");
+        Socket.Send("    [2, \""+Guid.NewGuid().ToString()+"\", \"MeterValues\", {\"connectorId\":"+connectorId+", \"transactionId\": \""+transactionId+"\", \"meterValue\": [{\"timestamp\": \""+timestamp+"\", \"sampledValue\": [{\"value\": \""+value+"\", \"context\": \""+context+"\", \"format\": \"Raw\", \"measurand\": \""+measurand+"\", \"phase\": \"L1\", \"location\":\"Outlet\", \"unit\": \""+unit+"\"}]}]}],");
         Thread.Sleep(1000);
         Socket.OnMessage -= GetSendMeterValuesResult;
     }
