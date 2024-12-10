@@ -1429,3 +1429,1225 @@ messages = [
     [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2cbb", "UnlockConnector", {"connectorId":"1","evseId": "0",}],
     [2, "a187bcd6-4042-4a82-b6d4-b4c55d2f2bee", "UpdateFirmware", {"location": "http://example.com/ocpp", "retries":"5", "retrieveDate":"2017-10-27T19:10:11Z","retryInterval":"30"}],
     ]
+
+responses = [
+    [
+  3,
+  "19223201",
+  "Authorize",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "idTokenInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "status": "Accepted",
+      "cacheExpiryDateTime": "2019-08-24T14:15:22Z",
+      "chargingPriority": 0,
+      "language1": "string",
+      "evseId": [
+        0
+      ],
+      "groupIdToken": {
+        "customData": {
+          "vendorId": "string"
+        },
+        "additionalInfo": [
+          {
+            "customData": {
+              "vendorId": "string"
+            },
+            "additionalIdToken": "string",
+            "type": "string"
+          }
+        ],
+        "idToken": "string",
+        "type": "Central"
+      },
+      "language2": "string",
+      "personalMessage": {
+        "customData": {
+          "vendorId": "string"
+        },
+        "format": "ASCII",
+        "language": "string",
+        "content": "string"
+      }
+    },
+    "certificateStatus": "Accepted"
+  }
+],
+[
+  3,
+  "19223201",
+  "BootNotification",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "currentTime": "2019-08-24T14:15:22Z",
+    "interval": 0,
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "CancelReservation",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "CertificateSigned",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "ChangeAvailability",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "ClearCache",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "ClearChargingProfile",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "ClearDisplayMessage",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "ClearVariableMonitoring",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "clearMonitoringResult": [
+      {
+        "customData": {
+          "vendorId": "string"
+        },
+        "status": "Accepted",
+        "id": 0,
+        "statusInfo": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "reasonCode": "string",
+          "additionalInfo": "string"
+        }
+      }
+    ]
+  }
+],
+[
+  3,
+  "19223201",
+  "ClearedChargingLimit",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "CostUpdated",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "CustomerInformation",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "DataTransfer",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    },
+    "data": null
+  }
+],
+[
+  3,
+  "19223201",
+  "DeleteCertificate",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "FirmwareStatusNotification",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "Get15118EVCertificate",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    },
+    "exiResponse": "string"
+  }
+],
+[
+  3,
+  "19223201",
+  "GetBaseReport",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "GetCertificateStatus",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    },
+    "ocspResult": "string"
+  }
+],
+[
+  3,
+  "19223201",
+  "GetChargingProfiles",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "GetCompositeSchedule",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    },
+    "schedule": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "chargingSchedulePeriod": [
+        {
+          "customData": {
+            "vendorId": "string"
+          },
+          "startPeriod": 0,
+          "limit": 0,
+          "numberPhases": 0,
+          "phaseToUse": 0
+        }
+      ],
+      "evseId": 0,
+      "duration": 0,
+      "scheduleStart": "2019-08-24T14:15:22Z",
+      "chargingRateUnit": "W"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "GetDisplayMessages",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "GetInstalledCertificateIds",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    },
+    "certificateHashDataChain": [
+      {
+        "customData": {
+          "vendorId": "string"
+        },
+        "certificateHashData": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "hashAlgorithm": "SHA256",
+          "issuerNameHash": "string",
+          "issuerKeyHash": "string",
+          "serialNumber": "string"
+        },
+        "certificateType": "V2GRootCertificate",
+        "childCertificateHashData": [
+          {
+            "customData": {
+              "vendorId": "string"
+            },
+            "hashAlgorithm": "SHA256",
+            "issuerNameHash": "string",
+            "issuerKeyHash": "string",
+            "serialNumber": "string"
+          }
+        ]
+      }
+    ]
+  }
+],
+[
+  3,
+  "19223201",
+  "GetLocalListVersion",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "versionNumber": 0
+  }
+],
+[
+  3,
+  "19223201",
+  "GetLog",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    },
+    "filename": "string"
+  }
+],
+[
+  3,
+  "19223201",
+  "GetMonitoringReport",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "GetReport",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "GetTransactionStatus",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "ongoingIndicator": true,
+    "messagesInQueue": true
+  }
+],
+[
+  3,
+  "19223201",
+  "GetVariables",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "getVariableResult": [
+      {
+        "customData": {
+          "vendorId": "string"
+        },
+        "attributeStatusInfo": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "reasonCode": "string",
+          "additionalInfo": "string"
+        },
+        "attributeStatus": "Accepted",
+        "attributeType": "Actual",
+        "attributeValue": "string",
+        "component": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "evse": {
+            "customData": {
+              "vendorId": "string"
+            },
+            "id": 0,
+            "connectorId": 0
+          },
+          "name": "string",
+          "instance": "string"
+        },
+        "variable": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "name": "string",
+          "instance": "string"
+        }
+      }
+    ]
+  }
+],
+[
+  3,
+  "19223201",
+  "Heartbeat",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "currentTime": "2019-08-24T14:15:22Z"
+  }
+],
+[
+  3,
+  "19223201",
+  "InstallCertificate",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "LogStatusNotification",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "MeterValues",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "NotifyChargingLimit",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "NotifyCustomerInformation",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "NotifyDisplayMessages",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "NotifyEVChargingNeeds",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "NotifyEVChargingSchedule",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "NotifyEvent",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "NotifyMonitoringReport",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "NotifyReport",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "PublishFirmware",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "PublishFirmwareStatusNotification",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "ReportChargingProfiles",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "StartTransaction",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    },
+    "transactionId": "string"
+  }
+],
+[
+  3,
+  "19223201",
+  "StopTransaction",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "ReservationStatusUpdate",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "ReserveNow",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "Reset",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "SecurityEventNotification",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "SendLocalList",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "SetChargingProfile",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "SetDisplayMessage",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "SetMonitoringBase",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "SetMonitoringLevel",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "SetNetworkProfile",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "SetVariableMonitoring",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "setMonitoringResult": [
+      {
+        "customData": {
+          "vendorId": "string"
+        },
+        "id": 0,
+        "statusInfo": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "reasonCode": "string",
+          "additionalInfo": "string"
+        },
+        "status": "Accepted",
+        "type": "UpperThreshold",
+        "component": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "evse": {
+            "customData": {
+              "vendorId": "string"
+            },
+            "id": 0,
+            "connectorId": 0
+          },
+          "name": "string",
+          "instance": "string"
+        },
+        "variable": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "name": "string",
+          "instance": "string"
+        },
+        "severity": 0
+      }
+    ]
+  }
+],
+[
+  3,
+  "19223201",
+  "SetVariables",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "setVariableResult": [
+      {
+        "customData": {
+          "vendorId": "string"
+        },
+        "attributeType": "Actual",
+        "attributeStatus": "Accepted",
+        "attributeStatusInfo": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "reasonCode": "string",
+          "additionalInfo": "string"
+        },
+        "component": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "evse": {
+            "customData": {
+              "vendorId": "string"
+            },
+            "id": 0,
+            "connectorId": 0
+          },
+          "name": "string",
+          "instance": "string"
+        },
+        "variable": {
+          "customData": {
+            "vendorId": "string"
+          },
+          "name": "string",
+          "instance": "string"
+        }
+      }
+    ]
+  }
+],
+[
+  3,
+  "19223201",
+  "SignCertificate",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "StatusNotification",
+  {
+    "customData": {
+      "vendorId": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "TransactionEvent",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "totalCost": 0,
+    "chargingPriority": 0,
+    "idTokenInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "status": "Accepted",
+      "cacheExpiryDateTime": "2019-08-24T14:15:22Z",
+      "chargingPriority": 0,
+      "language1": "string",
+      "evseId": [
+        0
+      ],
+      "groupIdToken": {
+        "customData": {
+          "vendorId": "string"
+        },
+        "additionalInfo": [
+          {
+            "customData": {
+              "vendorId": "string"
+            },
+            "additionalIdToken": "string",
+            "type": "string"
+          }
+        ],
+        "idToken": "string",
+        "type": "Central"
+      },
+      "language2": "string",
+      "personalMessage": {
+        "customData": {
+          "vendorId": "string"
+        },
+        "format": "ASCII",
+        "language": "string",
+        "content": "string"
+      }
+    },
+    "updatedPersonalMessage": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "format": "ASCII",
+      "language": "string",
+      "content": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "TriggerMessage",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "UnlockConnector",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Unlocked",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+],
+[
+  3,
+  "19223201",
+  "UnpublishFirmware",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "DownloadOngoing"
+  }
+],
+[
+  3,
+  "19223201",
+  "UpdateFirmware",
+  {
+    "customData": {
+      "vendorId": "string"
+    },
+    "status": "Accepted",
+    "statusInfo": {
+      "customData": {
+        "vendorId": "string"
+      },
+      "reasonCode": "string",
+      "additionalInfo": "string"
+    }
+  }
+]
+]
