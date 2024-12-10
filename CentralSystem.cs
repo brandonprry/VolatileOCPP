@@ -42,7 +42,10 @@ public class CentralSystem : System
             bool bad = false;
             foreach (string method in s.Dependencies)
                 if (!SupportedMethods.Contains(method))
+                {
+                    Console.WriteLine("Scenario requires " + method + " but server does not implement it.");
                     bad = true;
+                }
 
             if (bad)
             {
