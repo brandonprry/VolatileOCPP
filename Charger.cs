@@ -4,9 +4,9 @@ using WebSocketSharp;
 
 namespace ocpp;
 
-public class Charger : System
+public class Charger : EVSESystem
 {
-    public Charger(string url, string protocol) : base(url, protocol)
+    public Charger(string url, string protocol, string username = null, string password = null) : base(url, protocol, username, password)
     {
         ConnectorID = "1";
     }
@@ -17,6 +17,8 @@ public class Charger : System
     }
 
     public string ConnectorID { get; set; }
+
+    public Dictionary<string, string> Parameters { get; set; }
 
     public void Simulate()
     {
