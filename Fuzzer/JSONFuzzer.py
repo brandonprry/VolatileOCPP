@@ -4,6 +4,7 @@ import websocket
 import json
 import os
 import threading
+import subprocess
 from argparse import Namespace
 from websocket import create_connection
 from pyjfuzz.lib import *
@@ -18,18 +19,19 @@ def communicate(json_arr):
        'Sec-WebSocket-Protocol': 'ocpp1.6'
     }
     ws = create_connection('ws://localhost:8180/steve/websocket/CentralSystemService/1', header=headers)
-    ws.proxy = {
-        'http':'http://192.168.1.129:8080'
-    }
-    print 'ho'
     ws.settimeout(0.05)
     ws.send(json_arr)
+
     try:
         result = ws.recv()
-        return result
+        return True
     except websocket.WebSocketTimeoutException:
         return ("Timeout")
+    
     ws.close()
+    
+   # if "SQL" in os.popen("curl 'http://localhost:8180/steve/manager/transactions' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:131.0) Gecko/20100101 Firefox/131.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,image/svg+xml,*/*;q=0.8' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate, br, zstd' -H 'Connection: keep-alive' -H 'Referer: http://localhost:8180/steve/manager/home' -H 'Cookie: JSESSIONID=node0a2ytwx9oudft1v1s5mzeuvkbp1.node0' -H 'Upgrade-Insecure-Requests: 1' -H 'Sec-Fetch-Dest: document' -H 'Sec-Fetch-Mode: navigate' -H 'Sec-Fetch-Site: same-origin' -H 'Sec-Fetch-User: ?1' -H 'Priority: u=0, i'").read():
+    #    exit ("Don't")
 
 def __load_schema__(schema_type):
     files = os.listdir(os.path.join(os.path.dirname(__file__), "schemas/json"))
@@ -94,7 +96,7 @@ def test():
             print "\n\nNew message:"
             wf.write("----------------- New message -----------------\n")
             testf.write("----------------- New message -----------------\n")
-            communicate(str(m))
+            communicate(json.dumps(m))
             if validate(m, req_schema) == None:
                 print "Base message OK"
             for utf in [True, False]: # UTF8 insertion mode
