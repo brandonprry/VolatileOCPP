@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EvdriverClearCacheBody
+# ocpp.citrineos.Model.EvdriverClearCacheBody
 ## Properties
 
 Name | Type | Description | Notes

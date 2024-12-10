@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EvdriverCancelReservationBody
+# ocpp.citrineos.Model.EvdriverCancelReservationBody
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationPasswordBody
+# ocpp.citrineos.Model.ConfigurationPasswordBody
 ## Properties
 
 Name | Type | Description | Notes

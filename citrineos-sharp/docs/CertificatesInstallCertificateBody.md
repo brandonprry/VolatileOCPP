@@ -1,4 +1,4 @@
-# IO.Swagger.Model.CertificatesInstallCertificateBody
+# ocpp.citrineos.Model.CertificatesInstallCertificateBody
 ## Properties
 
 Name | Type | Description | Notes

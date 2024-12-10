@@ -1,4 +1,4 @@
-# IO.Swagger.Model.CertificatesDeleteCertificateBody
+# ocpp.citrineos.Model.CertificatesDeleteCertificateBody
 ## Properties
 
 Name | Type | Description | Notes

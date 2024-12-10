@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationBootBody
+# ocpp.citrineos.Model.ConfigurationBootBody
 ## Properties
 
 Name | Type | Description | Notes

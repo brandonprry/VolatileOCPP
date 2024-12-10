@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationUpdateFirmwareBody
+# ocpp.citrineos.Model.ConfigurationUpdateFirmwareBody
 ## Properties
 
 Name | Type | Description | Notes

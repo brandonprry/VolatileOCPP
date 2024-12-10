@@ -1,4 +1,4 @@
-# IO.Swagger.Model.CertificatesTlsCertificatesBody
+# ocpp.citrineos.Model.CertificatesTlsCertificatesBody
 ## Properties
 
 Name | Type | Description | Notes

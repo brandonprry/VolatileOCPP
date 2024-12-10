@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EvdriverUnlockConnectorBody
+# ocpp.citrineos.Model.EvdriverUnlockConnectorBody
 ## Properties
 
 Name | Type | Description | Notes

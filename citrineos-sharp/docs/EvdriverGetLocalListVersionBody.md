@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EvdriverGetLocalListVersionBody
+# ocpp.citrineos.Model.EvdriverGetLocalListVersionBody
 ## Properties
 
 Name | Type | Description | Notes

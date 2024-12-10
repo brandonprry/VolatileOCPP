@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ReportingGetMonitoringReportBody
+# ocpp.citrineos.Model.ReportingGetMonitoringReportBody
 ## Properties
 
 Name | Type | Description | Notes

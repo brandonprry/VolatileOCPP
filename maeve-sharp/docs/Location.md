@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Location
+# ocpp.maeve.Model.Location
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger - the C# library for the CitrineOS Central System API
+# ocpp.citrineos - the C# library for the CitrineOS Central System API
 
 Central System API for OCPP 2.0.1 messaging.
 
@@ -32,7 +32,7 @@ NOTE: RestSharp versions greater than 105.1.0 have a bug which causes file uploa
 
 Run the following commands to generate the DLL
 ```
-cd src/IO.Swagger
+cd src/ocpp.citrineos
 dotnet restore
 dotnet build
 ```
@@ -52,7 +52,7 @@ A `.nuspec` is included with the project. You can follow the Nuget quickstart to
 This `.nuspec` uses placeholders from the `.csproj`, so build the `.csproj` directly:
 
 ```
-nuget pack -Build -OutputDirectory out IO.Swagger.csproj
+nuget pack -Build -OutputDirectory out ocpp.citrineos.csproj
 ```
 
 Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/local-feeds) or [other host](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview) and consume the new package via Nuget as usual.

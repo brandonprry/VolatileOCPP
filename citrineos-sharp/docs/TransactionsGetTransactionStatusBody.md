@@ -1,4 +1,4 @@
-# IO.Swagger.Model.TransactionsGetTransactionStatusBody
+# ocpp.citrineos.Model.TransactionsGetTransactionStatusBody
 ## Properties
 
 Name | Type | Description | Notes

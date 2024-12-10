@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Certificate
+# ocpp.maeve.Model.Certificate
 ## Properties
 
 Name | Type | Description | Notes

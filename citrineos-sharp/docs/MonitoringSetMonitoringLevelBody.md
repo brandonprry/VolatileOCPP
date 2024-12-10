@@ -1,4 +1,4 @@
-# IO.Swagger.Model.MonitoringSetMonitoringLevelBody
+# ocpp.citrineos.Model.MonitoringSetMonitoringLevelBody
 ## Properties
 
 Name | Type | Description | Notes

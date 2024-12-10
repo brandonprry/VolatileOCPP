@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EvdriverAuthorizationBody
+# ocpp.citrineos.Model.EvdriverAuthorizationBody
 ## Properties
 
 Name | Type | Description | Notes

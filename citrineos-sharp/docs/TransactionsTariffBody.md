@@ -1,4 +1,4 @@
-# IO.Swagger.Model.TransactionsTariffBody
+# ocpp.citrineos.Model.TransactionsTariffBody
 ## Properties
 
 Name | Type | Description | Notes

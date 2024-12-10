@@ -1,4 +1,4 @@
-# IO.Swagger.Model.TransactionsCostUpdatedBody
+# ocpp.citrineos.Model.TransactionsCostUpdatedBody
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationChangeAvailabilityBody
+# ocpp.citrineos.Model.ConfigurationChangeAvailabilityBody
 ## Properties
 
 Name | Type | Description | Notes

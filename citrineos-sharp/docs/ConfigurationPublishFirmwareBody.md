@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationPublishFirmwareBody
+# ocpp.citrineos.Model.ConfigurationPublishFirmwareBody
 ## Properties
 
 Name | Type | Description | Notes

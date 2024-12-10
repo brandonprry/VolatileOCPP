@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ReportingCustomerInformationBody
+# ocpp.citrineos.Model.ReportingCustomerInformationBody
 ## Properties
 
 Name | Type | Description | Notes

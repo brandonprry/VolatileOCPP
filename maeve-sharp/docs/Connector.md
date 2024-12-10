@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Connector
+# ocpp.maeve.Model.Connector
 ## Properties
 
 Name | Type | Description | Notes

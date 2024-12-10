@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ChargeStationInstallCertificates
+# ocpp.maeve.Model.ChargeStationInstallCertificates
 ## Properties
 
 Name | Type | Description | Notes

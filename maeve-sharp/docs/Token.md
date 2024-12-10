@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Token
+# ocpp.maeve.Model.Token
 ## Properties
 
 Name | Type | Description | Notes

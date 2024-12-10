@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EvdriverRequestStopTransactionBody
+# ocpp.citrineos.Model.EvdriverRequestStopTransactionBody
 ## Properties
 
 Name | Type | Description | Notes

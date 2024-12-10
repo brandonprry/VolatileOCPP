@@ -1,4 +1,4 @@
-# IO.Swagger.Model.MonitoringSetVariablesBody
+# ocpp.citrineos.Model.MonitoringSetVariablesBody
 ## Properties
 
 Name | Type | Description | Notes

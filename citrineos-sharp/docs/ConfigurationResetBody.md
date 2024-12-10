@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationResetBody
+# ocpp.citrineos.Model.ConfigurationResetBody
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationUnpublishFirmwareBody
+# ocpp.citrineos.Model.ConfigurationUnpublishFirmwareBody
 ## Properties
 
 Name | Type | Description | Notes

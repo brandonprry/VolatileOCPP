@@ -1,4 +1,4 @@
-# IO.Swagger.Model.MonitoringClearVariableMonitoringBody
+# ocpp.citrineos.Model.MonitoringClearVariableMonitoringBody
 ## Properties
 
 Name | Type | Description | Notes

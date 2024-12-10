@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ChargeStationSettings
+# ocpp.maeve.Model.ChargeStationSettings
 ## Properties
 
 Name | Type | Description | Notes

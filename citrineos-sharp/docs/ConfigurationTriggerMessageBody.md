@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationTriggerMessageBody
+# ocpp.citrineos.Model.ConfigurationTriggerMessageBody
 ## Properties
 
 Name | Type | Description | Notes

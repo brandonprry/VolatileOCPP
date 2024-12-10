@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EvdriverSendLocalListBody
+# ocpp.citrineos.Model.EvdriverSendLocalListBody
 ## Properties
 
 Name | Type | Description | Notes

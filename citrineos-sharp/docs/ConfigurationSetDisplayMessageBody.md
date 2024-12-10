@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationSetDisplayMessageBody
+# ocpp.citrineos.Model.ConfigurationSetDisplayMessageBody
 ## Properties
 
 Name | Type | Description | Notes

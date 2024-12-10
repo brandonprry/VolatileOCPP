@@ -1,4 +1,4 @@
-# IO.Swagger.Model.ConfigurationSetNetworkProfileBody
+# ocpp.citrineos.Model.ConfigurationSetNetworkProfileBody
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SmartchargingClearedChargingLimitBody
+# ocpp.citrineos.Model.SmartchargingClearedChargingLimitBody
 ## Properties
 
 Name | Type | Description | Notes

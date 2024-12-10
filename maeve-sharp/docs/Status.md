@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Status
+# ocpp.maeve.Model.Status
 ## Properties
 
 Name | Type | Description | Notes

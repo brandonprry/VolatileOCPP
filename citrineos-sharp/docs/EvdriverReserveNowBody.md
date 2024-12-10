@@ -1,4 +1,4 @@
-# IO.Swagger.Model.EvdriverReserveNowBody
+# ocpp.citrineos.Model.EvdriverReserveNowBody
 ## Properties
 
 Name | Type | Description | Notes

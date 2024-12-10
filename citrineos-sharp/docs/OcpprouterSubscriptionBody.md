@@ -1,4 +1,4 @@
-# IO.Swagger.Model.OcpprouterSubscriptionBody
+# ocpp.citrineos.Model.OcpprouterSubscriptionBody
 ## Properties
 
 Name | Type | Description | Notes

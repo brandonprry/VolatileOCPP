@@ -1,4 +1,4 @@
-# IO.Swagger.Api.DefaultApi
+# ocpp.maeve.Api.DefaultApi
 
 All URIs are relative to *http://localhost:9410/api/v0*
 
@@ -30,9 +30,9 @@ Deletes a client certificate that has been uploaded to the CSMS using a base64 e
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -87,9 +87,9 @@ Install certificates on the charge station
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -148,9 +148,9 @@ Lists all tokens that can be used to authorize a charge
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -210,9 +210,9 @@ Lookup a client certificate that has been uploaded to the CSMS using a base64 en
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -270,9 +270,9 @@ Returns the details required by the CSMS gateway to determine how to authenticat
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -330,9 +330,9 @@ Lookup a token that can be used to authorize a charge
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -390,9 +390,9 @@ Supplies new configuration that should be applied to the charge station. This is
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -451,9 +451,9 @@ Registers a new charge station. The system will assume that the charge station h
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -512,9 +512,9 @@ Registers a location with the CSMS.
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -573,9 +573,9 @@ Registers an OCPI party with the CSMS. Depending on the configuration provided t
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -632,9 +632,9 @@ Creates or updates a token that can be used to authorize a charge
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -689,9 +689,9 @@ No authorization required
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {
@@ -749,9 +749,9 @@ Uploads a client certificate to the CSMS. The CSMS can use the certificate to au
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using ocpp.maeve.Api;
+using ocpp.maeve.Client;
+using ocpp.maeve.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Evse
+# ocpp.maeve.Model.Evse
 ## Properties
 
 Name | Type | Description | Notes

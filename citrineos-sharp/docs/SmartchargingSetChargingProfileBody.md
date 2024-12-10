@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SmartchargingSetChargingProfileBody
+# ocpp.citrineos.Model.SmartchargingSetChargingProfileBody
 ## Properties
 
 Name | Type | Description | Notes

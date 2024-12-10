@@ -1,4 +1,4 @@
-# IO.Swagger.Model.SmartchargingGetCompositeScheduleBody
+# ocpp.citrineos.Model.SmartchargingGetCompositeScheduleBody
 ## Properties
 
 Name | Type | Description | Notes

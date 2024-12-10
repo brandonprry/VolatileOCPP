@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Registration
+# ocpp.maeve.Model.Registration
 ## Properties
 
 Name | Type | Description | Notes
