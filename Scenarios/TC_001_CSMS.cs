@@ -43,7 +43,7 @@ public class TC_001_CSMS : IScenario
            }
        };
 
-        ws.Send("[2,\"852a4cb2-0e20-46f8-bc29-c5ab3cb182c7\",\"BootNotification\",{\"chargePointVendor\":\"Radboud\",\"chargePointModel\":\"Fuzzer\"}]");
+        ws.Send("[2,\"852a4cb2-0e20-46f8-bc29-c5ab3cb182c7\",\"BootNotification\",{\"chargePointVendor\":\"volatileocpp\",\"chargePointModel\":\"Charging System\"}]");
         Thread.Sleep(1000);
 
         ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Available\"}]");

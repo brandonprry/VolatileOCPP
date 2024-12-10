@@ -1,9 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-using WebSocketSharp;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using ocpp.Scenarios;
 using ocpp;
 
 public class Program

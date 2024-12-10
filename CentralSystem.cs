@@ -14,6 +14,7 @@ public class CentralSystem : System
         _scenarios.Add(new TC_001_CSMS());
         _scenarios.Add(new TC_003_CSMS());
         _scenarios.Add(new TC_004_1_CSMS());
+        _scenarios.Add(new TC_004_2_CSMS());
         _scenarios.Add(new TC_064_CSMS());
     }
    
