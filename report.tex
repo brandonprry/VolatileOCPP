@@ -1,0 +1,242 @@
+\documentclass{scrartcl}
+
+% Load required packages
+\usepackage{fontspec} % For custom fonts
+\usepackage{graphicx} % For including logos/images
+\usepackage{geometry} % For page geometry
+\usepackage{titlesec} % For customizing section titles
+\usepackage{fancyhdr} % For custom headers and footers
+\usepackage{tocloft}  % For customizing table of contents
+\usepackage{tcolorbox} % For colored boxes
+\usepackage{lipsum} % For placeholder text
+\usepackage{hyperref} % For hyperlinks
+\usepackage{titling} % For title customization
+
+% Page Geometry
+\geometry{
+    a4paper,
+    left=1in,
+    right=1in,
+    top=1in,
+    bottom=1in
+}
+
+% Custom Font
+\setmainfont{TeX Gyre Termes} % Change to your preferred font
+
+% Hyperref Settings
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan,
+    pdftitle={Technical Report},
+    pdfauthor={Your Name},
+}
+
+% Title Formatting
+\titleformat{\section}{\bfseries\LARGE}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\large}{\thesubsection}{1em}{}
+
+% Custom Header and Footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Technical Report}
+\fancyhead[R]{\thepage}
+
+% Front Page Design
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\end{center}\vspace{1em}}
+\preauthor{\begin{center}\large}
+\postauthor{\end{center}}
+\predate{\begin{center}\large}
+\postdate{\end{center}}
+
+% Section Style Box
+\newtcolorbox{sectionbox}[2][]{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    fonttitle=\bfseries,
+    title=#2,#1
+}
+
+% Finding Box Design
+\newtcolorbox{redfindingbox}[2][]{
+    colback=red!5!white,
+    colframe=red!75!black,
+    fonttitle=\bfseries,
+    title=#2,#1,
+    sharp corners,
+    boxrule=0.5mm,
+    width=\textwidth
+}
+
+% Finding Box Design
+\newtcolorbox{yellowfindingbox}[2][]{
+    colback=yellow!5!white,
+    colframe=yellow!75!black,
+    fonttitle=\bfseries,
+    title=#2,#1,
+    sharp corners,
+    boxrule=0.5mm,
+    width=\textwidth
+}
+
+% Finding Box Design
+\newtcolorbox{bluefindingbox}[2][]{
+    colback=cyan!5!white,
+    colframe=cyan!75!black,
+    fonttitle=\bfseries,
+    title=#2,#1,
+    sharp corners,
+    boxrule=0.5mm,
+    width=\textwidth
+}
+
+% Technical Report Title
+\title{SteVe CSMS OCPP Test Scenario Report}
+\author{Brandon Perry}
+\date{\today}
+
+\begin{document}
+
+% Front Page
+\begin{titlepage}
+    \centering
+    \vspace*{1in}
+    {\Huge \bfseries \thetitle}\\[2em]
+    {\Large \textbf{Tester:} \theauthor}\\[4em]
+    \includegraphics[width=0.3\textwidth]{/Users/bperry/Desktop/logo.png} % Replace with your logo path
+    \vfill
+    \vspace*{0.5in}
+    {\large \textbf{Date: \thedate}}
+\end{titlepage}
+
+% Table of Contents (Autofill)
+\tableofcontents
+\newpage
+
+% Executive Summary Section
+\section*{Executive Summary}
+\addcontentsline{toc}{section}{Executive Summary}
+\begin{sectionbox}[colback=yellow!10!white]{Summary}
+The open-source SteVe CSMS implements 9 OCPP methods for a charger to connect and be managed. These methods make SteVe OCPP 1.6 compatible with no security profile.
+\\
+\\
+No official scenarios failed during testing. However, during testing, it was noted that a specially crafted OCPP message could cause a Denial-of-Service on the Transaction Page. This finding is detailed within the Findings section below.
+\end{sectionbox}
+\newpage
+
+% Scenario Results Section
+\section*{Scenario Results}
+\addcontentsline{toc}{section}{Scenarios}
+\begin{sectionbox}{Implemented OCPP Methods}
+  \begin{verbatim}
+Authorize
+BootNotification
+DataTransfer
+FirmwareStatusNotification
+Heartbeat
+MeterValues
+StatusNotification
+StartTransaction
+StopTransaction
+\end{verbatim}
+\end{sectionbox}
+
+\begin{sectionbox}{Scenario Results}
+  \begin{verbatim}
+Running scenario: ocpp.Scenarios.TC_001_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_003_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_004_1_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_004_2_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_005_1_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_007_CSMS
+        -- PASSED!
+Scenario requires RemoteStartTransaction but server does not implement it.
+Skipping incompatible test ocpp.Scenarios.TC_010_CSMS
+Running scenario: ocpp.Scenarios.TC_023_1_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_023_2_CSMS
+
+Configure the volatileocpp ID Tag to be expired then press enter.
+
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_023_3_CSMS
+
+Configure the volatileocpp ID Tag to be blocked then press enter.
+
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_024_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_032_1_CSMS
+Ensure the volatileocpp idTag is allowed to authenticate, then press enter.
+
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_037_1_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_037_3_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_039_CSMS
+        -- PASSED!
+Running scenario: ocpp.Scenarios.TC_064_CSMS
+WARNING: DataTransfer Response ACCEPTED
+        -- PASSED!
+
+    \end{verbatim}
+\end{sectionbox}
+\newpage
+
+% Findings Section
+\section*{Findings}
+
+% Sample Finding 2
+\begin{yellowfindingbox}{Invalid OCPP Message Causes Denial-of-Service}
+   \addcontentsline{toc}{section}{Invalid OCPP Message Causes Denial-of-Service}
+    \textbf{Severity:} Medium \\
+    \textbf{Description:} A malformed StartTransaction message can cause the Transactions page to cease functioning. \\
+    \textbf{Technical Details:}
+    \begin{itemize}
+        \item Create a Chargebox ID of 1
+        \item Send the following StartTransaction OCPP message with a malformed timestamp value
+          \begin{verbatim}
+echo '[2, "dddb2599-d678-4ff8-bf38-a230390a1200", 
+"StartTransaction", {"connectorId": 42, "meterStart": 42,
+"idTag": "some id", "timestamp": "222222017-10-27T19:10:11Z"}]'
+| websocat -H="Sec-WebSocket-Protocol:ocpp1.6" 
+ws://localhost:8180/steve/websocket/CentralSystemService/1
+          \end{verbatim}
+        \item View Transaction Page with Stack Trace
+    \end{itemize}
+    \includegraphics[width=1\textwidth]{/Users/bperry/Downloads/380534194-116f5fa2-f88a-4dcf-9abf-33aabe67f093.png}
+\end{yellowfindingbox}
+
+% Sample Finding 2
+\begin{yellowfindingbox}{No Supported Security Profile}
+   \addcontentsline{toc}{section}{No Supported Security Profile}
+    \textbf{Severity:} Medium \\
+    \textbf{Description:} The SteVe CSMS does not implement any security profiles to secure the charging infrastructure. \\
+    \textbf{Technical Details:}
+    \begin{itemize}
+        \item Security Profile 1 implements basic authentication over plaintext HTTP
+        \item Security Profile 2 implements basic authentication over HTTP+TLS
+        \item Security Profile 3 implements client certificate authentication over HTTP+TLS
+    \end{itemize}
+
+SteVe CSMS implements none of the security profiles deatiled in the 1.6j and 2.0 OCPP standards. This puts the charging infrastructure at greater risk of attack.
+\end{yellowfindingbox}
+
+\newpage
+
+% Appendix Section
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+\begin{sectionbox}{Additional Data}
+    \lipsum[6] % Placeholder text
+\end{sectionbox}
+
+\end{document}
