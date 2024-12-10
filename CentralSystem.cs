@@ -8,6 +8,9 @@ public class CentralSystem : System
     public CentralSystem(string url, string protocol)
     : base(url, protocol)
     {
+        if (!url.StartsWith("wss://"))
+            Console.WriteLine("WARNING: Insecure plaintext communication");
+        
         Scenarios =
         [
             new TC_001_CSMS(),

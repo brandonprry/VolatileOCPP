@@ -41,8 +41,6 @@ public class TC_037_3_CSMS : IScenario
                    j["idTagInfo"]["status"].Value<string>() != "Invalid")
                    throw new Exception("Invalid response");
 
-                   
-               //transid = j["transactionId"].Value<int>();
            }
            else if (i == 2)
            {
@@ -50,8 +48,6 @@ public class TC_037_3_CSMS : IScenario
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
                 
-
-
            }
            else if (i == 3)
            {
