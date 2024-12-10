@@ -28,6 +28,14 @@ public class Program
             Console.WriteLine("TC_003_CSMS Failed");
         }
 
+         test = new TC_064_CSMS();
+
+        try {
+            test.RunScenario(url, protocol);
+        } catch {
+            Console.WriteLine("TC_064_CSMS Failed");
+        }
+
         using (var ws = new WebSocket(url, protocol))
         {
             ws.WaitTime = new TimeSpan(0, 0, 60);
@@ -174,9 +182,6 @@ public class Program
                 Thread.Sleep(1000);
             }
         }
-
- 
-
 
         Console.WriteLine("Done.");
     }
