@@ -5,10 +5,10 @@ https://ocpp.us
 ## Running CSMS scenarios
 
 ```
-        string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
-        string protocol = "ocpp1.6";
-        CentralSystem s = new CentralSystem(url, protocol);
-        s.RunScenarios();
+string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
+string protocol = "ocpp1.6";
+CentralSystem s = new CentralSystem(url, protocol);
+s.RunScenarios();
 ```
 
 Scenarios can be run against the SteVe OCPP Server implementation as a testbed. Create a ChargeBox ID and OCCP TD tag "volatileocpp".
@@ -106,20 +106,20 @@ WARNING: DataTransfer Response ACCEPTED
 Some basic charger simulations can be performed.
 
 ```
-        string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
-        string protocol = "ocpp1.6";
+string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
+string protocol = "ocpp1.6";
 
-        List<Task> tasks = new List<Task>();
-        for (int i = 1; i< 11; i++)
-        {
-            Charger c = new Charger(url, protocol);
-            c.ConnectorID = i.ToString();
-            c.IDTag = "volatileocpp";
-            tasks.Add(Task.Run(c.Simulate));
-        }
+List<Task> tasks = new List<Task>();
+for (int i = 1; i< 11; i++)
+{
+    Charger c = new Charger(url, protocol);
+    c.ConnectorID = i.ToString();
+    c.IDTag = "volatileocpp";
+    tasks.Add(Task.Run(c.Simulate));
+}
 
-        foreach (Task t in tasks)
-            t.Wait();
+foreach (Task t in tasks)
+    t.Wait();
 ```
 
 ![image](https://github.com/user-attachments/assets/9fed843c-df94-4b5e-9de3-e64612f88b75)
