@@ -115,7 +115,7 @@ public abstract class System
                         more.Add(method);
                         Console.WriteLine("Supports method: " + method);
                     }
-
+                    
                     //Console.WriteLine("Laputa says: " + method);
                 };
 
