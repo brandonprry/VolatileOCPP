@@ -45,7 +45,6 @@ public class TC_023_3_CSMS : IScenario
         ws.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"volatileocpp\"}]");
         Thread.Sleep(1000);
 
-
         return passed;
     }
 }
