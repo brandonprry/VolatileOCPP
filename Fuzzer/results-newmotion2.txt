@@ -1,0 +1,89 @@
+----------------- New message -----------------
+- utf = True -
+-- strong fuzzing = True --
+--- level = 1 ---
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootNotification", {"chargePointVendor": "Radboud", "chargePointModel": "Fuzzer"}]
+Validity request: OK
+Response: [2,"0","GetConfiguration",{}]
+Validity response: Schema error
+[2, u'0', u'GetConfiguration', {}] is not valid under any of the given schemas
+Server response not valid
+
+[2, "852a4cbd-0e20-46f8-bc29-c5ab3c]b182c7", "BootN

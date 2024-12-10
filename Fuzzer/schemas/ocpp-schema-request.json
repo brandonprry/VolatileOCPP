@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "array",
+    "maxItems": 4,
+    "minItems": 4,
+    "oneOf": [<loop>
+        {
+            "items": [
+                {
+                    "type": "number",
+					"enum": [2]
+                },
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "string",
+                    "enum": ["<action-name>"]
+                },
+                {
+                    "$ref": "file:schemas/json/<action-schema>"
+                }
+            ]
+        }<loop>
+    ]
+}
