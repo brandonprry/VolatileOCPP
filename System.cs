@@ -85,19 +85,30 @@ public abstract class System
                 ws.OnMessage += (sender, e) =>
                 {
                     JToken[] ret = JArray.Parse(e.Data).ToArray<JToken>();
-                    string tmp;
+                    
+                    string tmp ;
                     JObject? obj;
 
-                    try
+                    if (ret[2].Type == JTokenType.String)
                     {
                         tmp = ret[2].Value<string>();
 
                         if (!validResponses.Contains(tmp))
                             throw new Exception(tmp);
 
-                        less.Add(method);
+                        if (tmp == "NotImplemented" || tmp == "NotSupported")
+                        {
+                            less.Add(method);
+                        }
+                            else
+                            {
+                                if (tmp == "InternalError")
+                                    more.Add(method);
+Console.WriteLine("huh");
+
+                            }
                     }
-                    catch
+                    else
                     {
                         obj = ret[2] as JObject;
                         more.Add(method);
@@ -115,6 +126,6 @@ public abstract class System
 
         this.SupportedMethods = more.ToArray();
         this.UnsupportedMethods = less.ToArray();
-        Console.WriteLine ("Done");
+        Console.WriteLine("Done");
     }
 }
