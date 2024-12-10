@@ -6,12 +6,24 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        string url = "ws://localhost:8180/steve/websocket/CentralSystemService/1";
+        string url = "ws://localhost:8180/steve/websocket/CentralSystemService/";
         string protocol = "ocpp1.6";
 
-        CentralSystem s = new CentralSystem(url, protocol);
+        List<Task> tasks = new List<Task>();
+        for (int i = 1; i< 11; i++)
+        {
+            Charger c = new Charger(url+i, protocol);
+            c.ConnectorID = i.ToString();
+            c.IDTag = "volatileocpp-" + i;
+            tasks.Add(Task.Run(c.Simulate));
+        }
 
-        s.RunScenarios();
+        foreach (Task t in tasks)
+            t.Wait();
+
+        //CentralSystem s = new CentralSystem(url, protocol);
+
+        //s.RunScenarios();
 
         Console.WriteLine("Done.");
     }
