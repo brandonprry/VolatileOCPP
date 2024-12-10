@@ -15,6 +15,9 @@ public class TC_023_2_CSMS : IScenario
 
     public bool RunScenario(string url, string protocol)
     {
+        Console.WriteLine("\nConfigure the volatileocpp ID Tag to be expired then press enter.");
+        Console.ReadLine();
+
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
 
@@ -38,7 +41,7 @@ public class TC_023_2_CSMS : IScenario
             passed = true;
        };
 
-        ws.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"ExpiredID\"}]");
+        ws.Send("[2,\"8d59bc8c-9884-4d64-82b5-3819d0c58b8a\",\"Authorize\",{\"idTag\":\"volatileocpp\"}]");
         Thread.Sleep(1000);
 
 
