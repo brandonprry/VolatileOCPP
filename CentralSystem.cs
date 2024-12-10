@@ -20,8 +20,15 @@ public class CentralSystem : System
    
     public void RunScenarios()
     {
+        if (UnsupportedMethods == null)
+            GetMethods();
+        
         foreach (IScenario s in Scenarios)
         {
+            foreach(string method in s.Dependencies)
+                if (!SupportedMethods.Contains(method))
+                    continue;
+    
             s.RunScenario(URL, Protocol);
         }
     }
