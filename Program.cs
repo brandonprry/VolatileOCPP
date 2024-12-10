@@ -13,11 +13,20 @@ public class Program
         string protocol = "ocpp1.6";
 
         IScenario test = new TC_001_CSMS();
-        test.RunScenario(url, protocol);
+
+        try {
+            test.RunScenario(url, protocol);
+        } catch {
+            Console.WriteLine("TC_001_CSMS Failed");
+        }
 
         test = new TC_003_CSMS();
-        test.RunScenario(url, protocol);
 
+        try {
+            test.RunScenario(url, protocol);
+        } catch {
+            Console.WriteLine("TC_003_CSMS Failed");
+        }
 
         using (var ws = new WebSocket(url, protocol))
         {

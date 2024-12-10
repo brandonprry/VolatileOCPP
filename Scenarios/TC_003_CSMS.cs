@@ -15,29 +15,37 @@ public class TC_003_CSMS : IScenario
              int i = 1;
              ws.OnMessage += (sender, e) =>
             {
-                
                 JArray a = JArray.Parse(e.Data);
                 JObject j = a[2] as JObject;
+
                 if (i == 1)
-                {
+                { 
+                    i++;
                     if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                         throw new Exception("Invalid response");
 
-                    i++;
+                    
                 }
-                else if (i ==2)
-                {       
+                else if (i == 2)
+                {     
+                    i++;  
                     if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/AuthorizeResponse.json")))
-                        throw new Exception("Invalid repsonse");
+                        throw new Exception("Invalid response");
 
-                    i++;
+                    if (j["idTagInfo"]["status"] == null || j["idTagInfo"]["status"].Value<string>() != "Accepted")
+                       throw new Exception("Invalid response");
+
+                   
                 }
-                else if (i ==3)
+                else if (i == 3)
                 {       
-                    if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
-                        throw new Exception("Invalid repsonse");
-
                     i++;
+                    if (!Utility.ValidateJSON(j, System.IO.File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
+                        throw new Exception("Invalid response");
+
+                        if (j["idTagInfo"]["status"] == null || j["idTagInfo"] ["status"].Value<string>() != "Accepted")
+                       throw new Exception("Invalid response");
+
                 }
                 else if (i == 4)
                 {                   
@@ -54,8 +62,6 @@ Thread.Sleep(1000);
 Thread.Sleep(1000);
             ws.Send("[2,\"9b25cbb0-c016-41e7-baa0-e796a9565c11\",\"StatusNotification\",{\"connectorId\":1,\"errorCode\":\"NoError\",\"status\":\"Charging\"}]");
 Thread.Sleep(1000);
-
-
         }
         return false;
     }
