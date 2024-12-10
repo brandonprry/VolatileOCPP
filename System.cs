@@ -15,14 +15,11 @@ public abstract class System
     {
         _url = ws.Url.ToString();
 
-
-        Socket = ws;
-
-       
+        Socket = ws;       
     }
 
 
-    public System(string url, string protocol, bool check = false)
+    public System(string url, string protocol)
     {
         if (!url.StartsWith("wss://"))
             Console.WriteLine("WARNING: Insecure plaintext communication");
@@ -49,28 +46,11 @@ public abstract class System
 
         Socket = ws;
 
-        if (check)
-        {
-            Guid uuid = Guid.NewGuid();
-            try
-            {
-                ws.Send("[2, \"" + uuid.ToString() + "\", \"Heartbeat\", {}]");
-                Thread.Sleep(1000);
-            }
-            catch
-            {
-                Console.WriteLine("Error");
-                return;
-            }
-
-
-        }
+        
     }
 
     string _url = string.Empty;
     string _protocol = string.Empty;
-
-    public List<IScenario> Scenarios { get; protected set; }
     public string[]? SupportedMethods { get; set; }
 
     public string[]? UnsupportedMethods { get; set; }

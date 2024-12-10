@@ -18,9 +18,10 @@ public class TC_064_CSMS : IScenario
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
 
-        int i = 1;
+
         bool passed = false;
         Charger charger = new Charger(ws);
+        bool step1 = false;
         ws.OnMessage += (sender, e) =>
        {
            JArray a = JArray.Parse(e.Data);
@@ -43,12 +44,14 @@ public class TC_064_CSMS : IScenario
            if (j["status"].Value<string>() == "Accepted")
                Console.WriteLine("\nWARNING: DataTransfer Response ACCEPTED");
 
+           step1 = true;
            passed = true;
        };
 
         charger.SendDataTransfer();
-        Thread.Sleep(1000);
 
+        while (!step1)
+        Thread.Sleep(1000);
 
         return passed;
     }

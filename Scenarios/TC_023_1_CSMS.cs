@@ -18,8 +18,9 @@ public class TC_023_1_CSMS : IScenario
         using var ws = new WebSocket(url, protocol);
         ws.Connect();
 
-        int i = 1;
+        
         bool passed = false;
+        bool step1 = false;
         Charger charger = new Charger(ws);
         ws.OnMessage += (sender, e) =>
        {
@@ -36,10 +37,13 @@ public class TC_023_1_CSMS : IScenario
                j["idTagInfo"]["status"].Value<string>() != "Invalid")
                throw new Exception("Invalid response");
 
+            step1 = true;
            passed = true;
        };
 
         charger.SendAuthorize("NotARealID");
+
+        while (!step1)
         Thread.Sleep(1000);
 
         return passed;

@@ -1,6 +1,9 @@
 using System;
 using WebSocketSharp.Server;
 using ocpp.Scenarios;
+using WebSocketSharp;
+using System.Threading.Tasks;
+
 
 namespace ocpp;
 
@@ -14,10 +17,20 @@ public class CentralSystem : System
         server.Start();
     }
 
+    public CentralSystem(WebSocket ws) : base(ws)
+    {
+
+    }
+
     public CentralSystem(string url, string protocol)
     : base(url, protocol)
-    {   
-        Scenarios =
+    {
+
+    }
+
+    public IScenario[] GetScenarios()
+    {
+        return
         [
             new TC_001_CSMS(),
             new TC_003_CSMS(),
@@ -43,7 +56,7 @@ public class CentralSystem : System
         if (UnsupportedMethods == null)
             GetMethods();
 
-        foreach (IScenario s in Scenarios)
+        foreach (IScenario s in GetScenarios())
         {
             bool bad = false;
             foreach (string method in s.Dependencies)
@@ -63,9 +76,17 @@ public class CentralSystem : System
 
             Console.WriteLine("Running scenario: " + s.GetType().ToString());
 
-            if (s.RunScenario(URL, Protocol))
+            var task = Task.Run(() => s.RunScenario(URL, Protocol));
+            if (task.Wait(TimeSpan.FromSeconds(120)))
             {
-                Console.WriteLine("\t-- PASSED!");
+                if (task.Result)
+                {
+                    Console.WriteLine("\t-- PASSED!");
+                }
+                else
+                {
+                    Console.WriteLine("\t-- FAILED!");
+                }
             }
             else
             {
