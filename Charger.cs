@@ -41,7 +41,7 @@ public class Charger : System
         SendStatusNotification("1", "NoError", "Finishing");
 
 
-        SendStopTransaction(CurrentTransactionID, meterStop: "99");
+        SendStopTransaction(CurrentTransactionID, meterStop: "99", idTag: IDTag);
 
         SendStatusNotification("1", "NoError", "Available");
 
