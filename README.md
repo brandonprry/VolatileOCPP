@@ -1,8 +1,8 @@
-# volatileocpp
+# VolatileOCPP
 
 https://ocpp.us
 
-Test cases are currently built against the StEVe OCPP Server implementation.
+Test cases are currently built against the SteVe OCPP Server implementation. Test case implementations are built based directly on the CompliancyTestTool PDF included within the repository.
 
 https://github.com/steve-community/steve
 
@@ -10,9 +10,7 @@ Issues found and reported so far:
 
 https://github.com/steve-community/steve/issues/1609
 
-
 If you need help verifying your OCPP implementation, email bperry@atx.services to see how we can help.
-
 
 ```
 Supports method: Authorize
