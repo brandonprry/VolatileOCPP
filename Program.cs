@@ -9,7 +9,7 @@ public class Program
     {
         ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
         
-        string url = "ws://localhost/ws/5";
+        string url = "wss://localhost/ws/6";
         string protocol = "ocpp1.6";
 
        /* List<Task> tasks = new List<Task>();
@@ -24,7 +24,7 @@ public class Program
         foreach (Task t in tasks)
             t.Wait();*/
 
-        CentralSystem s = new CentralSystem(url, protocol, "5", "iHa09guRQeo70UAG");
+        CentralSystem s = new CentralSystem(url, protocol, "6", "xuXuKQrVETqTpFbe");
 
         s.RunScenarios();
 
