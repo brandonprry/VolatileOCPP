@@ -6,7 +6,7 @@ namespace ocpp.Scenarios;
 
 public class TC_005_1_CSMS : IScenario
 {
-    public string[] Dependencies { get { return ["StatusNotification", "StopTransaction"]; } }
+    public string[] Dependencies { get { return ["StatusNotification", "StopTransaction", "StartTransaction"]; } }
 
     public bool DependsOn(string method)
     {
