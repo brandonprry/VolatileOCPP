@@ -11,35 +11,14 @@ public abstract class System
     {
     }
 
-    public System(WebSocket ws, bool check = false)
+    public System(WebSocket ws)
     {
         _url = ws.Url.ToString();
 
-        ws.WaitTime = new TimeSpan(0, 0, 60);
-
-            ws.OnError += (sender, e) =>
-            {
-                Console.WriteLine("Error");
-                return;
-            };
 
         Socket = ws;
-        if (check)
-        {
-            Guid uuid = Guid.NewGuid();
 
-            try
-            {
-                ws.Send("[2, \"" + uuid.ToString() + "\", \"Heartbeat\", {}]");
-                Thread.Sleep(1000);
-            }
-            catch
-            {
-                Console.WriteLine("Error");
-                return;
-            }
-
-        }
+       
     }
 
 

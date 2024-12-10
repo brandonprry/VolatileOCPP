@@ -35,7 +35,6 @@ public class TC_032_1_CSMS : IScenario
 
            if (i == 1)
            {
-
                i++;
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StatusNotificationResponse.json")))
                    throw new Exception("Invalid response");
@@ -44,7 +43,6 @@ public class TC_032_1_CSMS : IScenario
            else if (i == 2)
            {
                i++;
-
                if (!Utility.ValidateJSON(j, File.ReadAllText("/Users/bperry/projects/ocpp/v1.6_schemas/schemas/StartTransactionResponse.json")))
                    throw new Exception("Invalid response");
 
@@ -52,7 +50,6 @@ public class TC_032_1_CSMS : IScenario
                {
                    Console.WriteLine("Expected Accepted response, got " + j["idTagInfo"]["status"].Value<string>());
                    throw new Exception("Invalid response");
-
                }
 
                transid = j["transactionId"].Value<int>();
