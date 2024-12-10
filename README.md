@@ -2,9 +2,15 @@
 
 Test cases are currently built against the StEVe OCPP Server implementation.
 
+https://github.com/steve-community/steve
+
+Issues found and reported so far:
+
+https://github.com/steve-community/steve/issues/1609
+
+
 If you need help verifying your OCPP implementation, email bperry@atx.services to see how we can help.
 
-https://github.com/steve-community/steve
 
 ```
 Supports method: Authorize
