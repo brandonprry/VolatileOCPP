@@ -1,1 +1,3 @@
 These EXI documents were generated with the reference ISO-15118-20 implementation https://github.com/EVerest/libiso15118 as well as Siemens OpenV2G.
+
+You can use these EXI documents to test your own ISO-15118-20 EXI implementations.
