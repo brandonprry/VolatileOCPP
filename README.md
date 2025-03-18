@@ -106,6 +106,10 @@ WARNING: DataTransfer Response ACCEPTED
         -- PASSED!
 ```
 
+## Good Reading
+
+https://arxiv.org/html/2404.06635v2
+
 ## Simulating Chargers for your CSMS
 
 Some basic charger simulations can be performed.
